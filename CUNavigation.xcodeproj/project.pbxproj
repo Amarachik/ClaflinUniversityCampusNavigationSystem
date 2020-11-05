@@ -12,6 +12,8 @@
 		A21732092533AC4A00B3265F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A21732072533AC4A00B3265F /* Main.storyboard */; };
 		A217320B2533AC4D00B3265F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A217320A2533AC4D00B3265F /* Assets.xcassets */; };
 		A217320E2533AC4D00B3265F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A217320C2533AC4D00B3265F /* LaunchScreen.storyboard */; };
+		A250BB462538E03100D00F84 /* CUNavigation_FrontEnd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A250BB452538E03100D00F84 /* CUNavigation_FrontEnd.storyboard */; };
+		A2C2EA76253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		A217320A2533AC4D00B3265F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A217320D2533AC4D00B3265F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A217320F2533AC4D00B3265F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A250BB452538E03100D00F84 /* CUNavigation_FrontEnd.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CUNavigation_FrontEnd.storyboard; sourceTree = "<group>"; };
+		A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUNavigationFirstPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				A21732032533AC4A00B3265F /* AppDelegate.swift */,
 				A21732052533AC4A00B3265F /* ViewController.swift */,
 				A21732072533AC4A00B3265F /* Main.storyboard */,
+				A250BB452538E03100D00F84 /* CUNavigation_FrontEnd.storyboard */,
+				A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */,
 				A217320A2533AC4D00B3265F /* Assets.xcassets */,
 				A217320C2533AC4D00B3265F /* LaunchScreen.storyboard */,
 				A217320F2533AC4D00B3265F /* Info.plist */,
@@ -122,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A250BB462538E03100D00F84 /* CUNavigation_FrontEnd.storyboard in Resources */,
 				A217320E2533AC4D00B3265F /* LaunchScreen.storyboard in Resources */,
 				A217320B2533AC4D00B3265F /* Assets.xcassets in Resources */,
 				A21732092533AC4A00B3265F /* Main.storyboard in Resources */,
@@ -135,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C2EA76253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift in Sources */,
 				A21732062533AC4A00B3265F /* ViewController.swift in Sources */,
 				A21732042533AC4A00B3265F /* AppDelegate.swift in Sources */,
 			);
