@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oZ6-Oy-2yQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oZ6-Oy-2yQ">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main-->
-        <scene sceneID="x7r-Aw-YYz">
+        <!--ResourcesCategory-->
+        <scene sceneID="ZSM-9z-FW9">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="Alc-UW-y7J" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6KE-z1-HJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ResourcesCategory" id="bYw-Yg-z0r" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Jxi-C8-7yQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sw2-Yz-3aK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="159"/>
+            <point key="canvasLocation" x="180" y="-348"/>
+        </scene>
+        <!--StudentAccountsCategory-->
+        <scene sceneID="U5h-uv-fd9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StudentAccountsCategory" id="Rid-5Z-ELl" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QDx-b8-Fk1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eIw-T7-Kd0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105" y="-156"/>
         </scene>
         <!--AcademicDevelopmentCategory-->
         <scene sceneID="hxW-Wa-RGm">
@@ -25,7 +37,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gn8-6g-2sL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-460" y="203"/>
+            <point key="canvasLocation" x="-901" y="110"/>
         </scene>
         <!--Navigation First Page View Controller-->
         <scene sceneID="eci-qw-LRE">
@@ -87,6 +99,9 @@
                                                 <state key="normal" title="Resources">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="bYw-Yg-z0r" kind="show" id="eZn-bi-18E"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YtO-2L-5Jz">
                                                 <rect key="frame" x="37" y="360" width="120" height="29"/>
@@ -104,6 +119,9 @@
                                                 <state key="normal" title="Student Accounts">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="Rid-5Z-ELl" kind="show" id="fNn-vh-rF8"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" alpha="0.94999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graduationcap.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Cg-P1-6OQ">
                                                 <rect key="frame" x="54" y="140" width="66" height="66"/>
@@ -192,35 +210,11 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="bhG-0X-KDg" id="lNa-fr-5MC"/>
-                        <segue destination="Alc-UW-y7J" kind="show" id="FLx-Kn-ju4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBp-oo-74D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-503" y="-332"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="4oO-J9-PiB">
-            <objects>
-                <viewController id="HXc-Lo-TFR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="71U-ai-JPa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar alpha="0.55000000000000004" contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABT-CJ-3u1">
-                                <rect key="frame" x="33" y="174" width="348" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" systemColor="systemRedColor"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="idK-RI-Jir"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jqg-8N-jPv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="262.31884057971018" y="-332.14285714285711"/>
         </scene>
         <!--HealthAndWellness_StoryBoard-->
         <scene sceneID="nFf-yh-A0a">
@@ -230,7 +224,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZ1-b3-PTr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-201" y="111"/>
+            <point key="canvasLocation" x="-133" y="110"/>
         </scene>
     </scenes>
     <resources>
@@ -245,9 +239,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
