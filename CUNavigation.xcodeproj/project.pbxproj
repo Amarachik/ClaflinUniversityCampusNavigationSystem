@@ -16,6 +16,7 @@
 		A217320E2533AC4D00B3265F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A217320C2533AC4D00B3265F /* LaunchScreen.storyboard */; };
 		A250BB462538E03100D00F84 /* CUNavigation_FrontEnd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A250BB452538E03100D00F84 /* CUNavigation_FrontEnd.storyboard */; };
 		A2C2EA76253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */; };
+		A2E61550256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E6154F256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift */; };
 		E83366FD4423066F40F0851F /* Pods_CUNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5761993E5A819A1EC08FC41 /* Pods_CUNavigation.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		A217320F2533AC4D00B3265F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A250BB452538E03100D00F84 /* CUNavigation_FrontEnd.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CUNavigation_FrontEnd.storyboard; sourceTree = "<group>"; };
 		A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUNavigationFirstPageViewController.swift; sourceTree = "<group>"; };
+		A2E6154F256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AcademicDevelopmentCategoryViewController copy.swift"; sourceTree = "<group>"; };
 		DF9CFDA30595F067FA77FFDA /* Pods-CUNavigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUNavigation.release.xcconfig"; path = "Pods/Target Support Files/Pods-CUNavigation/Pods-CUNavigation.release.xcconfig"; sourceTree = "<group>"; };
 		E5761993E5A819A1EC08FC41 /* Pods_CUNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CUNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -71,9 +73,10 @@
 			children = (
 				A21732032533AC4A00B3265F /* AppDelegate.swift */,
 				A21732052533AC4A00B3265F /* ViewController.swift */,
+				A2E6154F256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift */,
+				A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */,
 				A21732072533AC4A00B3265F /* Main.storyboard */,
 				A250BB452538E03100D00F84 /* CUNavigation_FrontEnd.storyboard */,
-				A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */,
 				7684F5F9254B6AEB00882335 /* AcademicDevelopmentCategory.storyboard */,
 				A217320A2533AC4D00B3265F /* Assets.xcassets */,
 				A217320C2533AC4D00B3265F /* LaunchScreen.storyboard */,
@@ -111,7 +114,8 @@
 				A21731FC2533AC4900B3265F /* Sources */,
 				A21731FD2533AC4900B3265F /* Frameworks */,
 				A21731FE2533AC4900B3265F /* Resources */,
-				FC9E6F60CE74989835419791 /* [CP] Copy Pods Resources */,
+				188596122E9B67A20479CB26 /* [CP] Embed Pods Frameworks */,
+				012BA2B442A2670B54B8E679 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +176,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		012BA2B442A2670B54B8E679 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CUNavigation/Pods-CUNavigation-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CUNavigation/Pods-CUNavigation-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CUNavigation/Pods-CUNavigation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		188596122E9B67A20479CB26 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CUNavigation/Pods-CUNavigation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CUNavigation/Pods-CUNavigation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CUNavigation/Pods-CUNavigation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		259CE0634E898EB88999C5C0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,23 +228,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FC9E6F60CE74989835419791 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CUNavigation/Pods-CUNavigation-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CUNavigation/Pods-CUNavigation-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CUNavigation/Pods-CUNavigation-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -215,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2C2EA76253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift in Sources */,
+				A2E61550256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift in Sources */,
 				A21732062533AC4A00B3265F /* ViewController.swift in Sources */,
 				A21732042533AC4A00B3265F /* AppDelegate.swift in Sources */,
 			);
