@@ -8,14 +8,28 @@
 
 import UIKit
 
-class WritingCenterViewControllerTest : UIViewController, UICollectionViewDelegate {
+class WritingCenterViewControllerTest : UIViewController{
     
+
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     var writingCenterQ = WritingCenterClass.fetchWriting()
     let cellScale: CGFloat = 0.6
     
+    func addBottomBorders() {
+       let thickness: CGFloat = 3.0
+       let bottomBorder = CALayer()
+       bottomBorder.frame = CGRect(x:0, y: self.headerView.frame.size.height - thickness, width: self.headerView.frame.size.width, height:thickness)
+       bottomBorder.backgroundColor = UIColor(red:5/255, green:31/255, blue:49/255, alpha: 1).cgColor
+       headerView.layer.addSublayer(bottomBorder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        addBottomBorders()
         
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * cellScale)
@@ -27,9 +41,8 @@ class WritingCenterViewControllerTest : UIViewController, UICollectionViewDelega
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         collectionView.contentInset = UIEdgeInsets(top: insetY, left: insetX, bottom: insetY, right: insetX)
         
-
         collectionView.dataSource = self
-        collectionView.delegate = self
+        //collectionView.delegate = self
     }
 }
 

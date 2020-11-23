@@ -20,6 +20,9 @@
 		A2521CD9256B1C5800E38BE0 /* StudentAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2521CD8256B1C5800E38BE0 /* StudentAccountsViewController.swift */; };
 		A2521CDC256B1C8100E38BE0 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2521CDB256B1C8100E38BE0 /* ResourcesViewController.swift */; };
 		A2521CDF256B1CA700E38BE0 /* HealthandWellnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2521CDE256B1CA700E38BE0 /* HealthandWellnessViewController.swift */; };
+		A2521CE3256B270D00E38BE0 /* WritingCenterViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2521CE2256B270D00E38BE0 /* WritingCenterViewControllerTest.swift */; };
+		A2521CE6256B271A00E38BE0 /* WritingCenterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2521CE5256B271900E38BE0 /* WritingCenterCollectionViewCell.swift */; };
+		A2521CE9256B272900E38BE0 /* WritingCenterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2521CE8256B272800E38BE0 /* WritingCenterClass.swift */; };
 		A2C2EA76253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */; };
 		A2E61550256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E6154F256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift */; };
 		E83366FD4423066F40F0851F /* Pods_CUNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5761993E5A819A1EC08FC41 /* Pods_CUNavigation.framework */; };
@@ -42,6 +45,9 @@
 		A2521CD8256B1C5800E38BE0 /* StudentAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAccountsViewController.swift; sourceTree = "<group>"; };
 		A2521CDB256B1C8100E38BE0 /* ResourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		A2521CDE256B1CA700E38BE0 /* HealthandWellnessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthandWellnessViewController.swift; sourceTree = "<group>"; };
+		A2521CE2256B270D00E38BE0 /* WritingCenterViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingCenterViewControllerTest.swift; sourceTree = "<group>"; };
+		A2521CE5256B271900E38BE0 /* WritingCenterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingCenterCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2521CE8256B272800E38BE0 /* WritingCenterClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingCenterClass.swift; sourceTree = "<group>"; };
 		A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUNavigationFirstPageViewController.swift; sourceTree = "<group>"; };
 		A2E6154F256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AcademicDevelopmentCategoryViewController copy.swift"; sourceTree = "<group>"; };
 		DF9CFDA30595F067FA77FFDA /* Pods-CUNavigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUNavigation.release.xcconfig"; path = "Pods/Target Support Files/Pods-CUNavigation/Pods-CUNavigation.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,19 +87,22 @@
 		A21732022533AC4A00B3265F /* CUNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				A21732072533AC4A00B3265F /* Main.storyboard */,
+				7684F5F9254B6AEB00882335 /* AcademicDevelopmentCategory.storyboard */,
+				A250BB452538E03100D00F84 /* CUNavigation_FrontEnd.storyboard */,
+				73EB4130255B39290057B5D3 /* HealthAndWellness_StoryBoard.storyboard */,
+				A2521CD5256B1C0300E38BE0 /* ResourcesCategory.storyboard */,
+				A2521CD2256B1BDA00E38BE0 /* StudentAccountsCategory.storyboard */,
 				A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */,
 				A21732052533AC4A00B3265F /* ViewController.swift */,
 				A21732032533AC4A00B3265F /* AppDelegate.swift */,
 				A2E6154F256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift */,
 				A2521CD8256B1C5800E38BE0 /* StudentAccountsViewController.swift */,
 				A2521CDB256B1C8100E38BE0 /* ResourcesViewController.swift */,
+				A2521CE2256B270D00E38BE0 /* WritingCenterViewControllerTest.swift */,
+				A2521CE8256B272800E38BE0 /* WritingCenterClass.swift */,
+				A2521CE5256B271900E38BE0 /* WritingCenterCollectionViewCell.swift */,
 				A2521CDE256B1CA700E38BE0 /* HealthandWellnessViewController.swift */,
-				A21732072533AC4A00B3265F /* Main.storyboard */,
-				A250BB452538E03100D00F84 /* CUNavigation_FrontEnd.storyboard */,
-				7684F5F9254B6AEB00882335 /* AcademicDevelopmentCategory.storyboard */,
-				A2521CD2256B1BDA00E38BE0 /* StudentAccountsCategory.storyboard */,
-				73EB4130255B39290057B5D3 /* HealthAndWellness_StoryBoard.storyboard */,
-				A2521CD5256B1C0300E38BE0 /* ResourcesCategory.storyboard */,
 				A217320A2533AC4D00B3265F /* Assets.xcassets */,
 				A217320C2533AC4D00B3265F /* LaunchScreen.storyboard */,
 				A217320F2533AC4D00B3265F /* Info.plist */,
@@ -253,11 +262,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2521CDF256B1CA700E38BE0 /* HealthandWellnessViewController.swift in Sources */,
+				A2521CE6256B271A00E38BE0 /* WritingCenterCollectionViewCell.swift in Sources */,
 				A2521CDC256B1C8100E38BE0 /* ResourcesViewController.swift in Sources */,
 				A2521CD9256B1C5800E38BE0 /* StudentAccountsViewController.swift in Sources */,
 				A2C2EA76253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift in Sources */,
+				A2521CE3256B270D00E38BE0 /* WritingCenterViewControllerTest.swift in Sources */,
 				A2E61550256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift in Sources */,
 				A21732062533AC4A00B3265F /* ViewController.swift in Sources */,
+				A2521CE9256B272900E38BE0 /* WritingCenterClass.swift in Sources */,
 				A21732042533AC4A00B3265F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
