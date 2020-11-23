@@ -103,13 +103,12 @@ class CUNavigationFirstPageViewController: UIViewController {
         markerUMC.icon = GMSMarker.markerImage(with: .blue)
         markerUMC.title = "University Music Center"
         markerUMC.map = mapView
-        markerUMC.opacity = 0.0
         
         let markerStudentCenter = GMSMarker()
         markerStudentCenter.position = CLLocationCoordinate2D(latitude: 33.49690, longitude: -80.85515)
         markerStudentCenter.title = "Student Center"
+        markerStudentCenter.icon = GMSMarker.markerImage(with: .blue)
         markerStudentCenter.map = mapView
-        markerStudentCenter.opacity = 0.0
         
         let markerKleist = GMSMarker()
         markerKleist.position = CLLocationCoordinate2D(latitude: 33.49655, longitude: -80.85480)
@@ -120,8 +119,8 @@ class CUNavigationFirstPageViewController: UIViewController {
         let markerHonorsCollege = GMSMarker()
         markerHonorsCollege.position = CLLocationCoordinate2D(latitude: 33.49674, longitude: -80.85434)
         markerHonorsCollege.title = "Alice Carson Tisdale Honors College"
+        markerHonorsCollege.icon = GMSMarker.markerImage(with: .blue)
         markerHonorsCollege.map = mapView
-        markerHonorsCollege.opacity = 0.0
         
         let markerMinisterH = GMSMarker()
         markerMinisterH.position = CLLocationCoordinate2D(latitude: 33.49703, longitude: -80.85426)
@@ -197,8 +196,8 @@ class CUNavigationFirstPageViewController: UIViewController {
         let markerEast = GMSMarker()
         markerEast.position = CLLocationCoordinate2D(latitude: 33.49865, longitude: -80.85196)
         markerEast.title = "SRC East"
+        markerEast.icon = GMSMarker.markerImage(with: .blue)
         markerEast.map = mapView
-        markerEast.opacity = 0.0
         
         let markerNorth = GMSMarker()
         markerNorth.position = CLLocationCoordinate2D(latitude: 33.49918, longitude: -80.85210)
@@ -215,8 +214,8 @@ class CUNavigationFirstPageViewController: UIViewController {
         let markerCommons = GMSMarker()
         markerCommons.position = CLLocationCoordinate2D(latitude: 33.49959, longitude: -80.85276)
         markerCommons.title = "Claflin Commons"
+        markerCommons.icon = GMSMarker.markerImage(with: .blue)
         markerCommons.map = mapView
-        markerCommons.opacity = 0.0
         
         let markerHighRise = GMSMarker()
         markerHighRise.position = CLLocationCoordinate2D(latitude: 33.49985, longitude: -80.85332)
@@ -233,8 +232,8 @@ class CUNavigationFirstPageViewController: UIViewController {
         let markerJTK = GMSMarker()
         markerJTK.position = CLLocationCoordinate2D(latitude: 33.50147, longitude: -80.85269)
         markerJTK.title = "Jonas T. Kennedy Health and Physical Education"
+        markerJTK.icon = GMSMarker.markerImage(with: .blue)
         markerJTK.map = mapView
-       // markerJTK.opacity = 0.0
         
         let markerAnnex = GMSMarker()
         markerAnnex.position = CLLocationCoordinate2D(latitude: 33.50187, longitude: -80.85187)
@@ -245,33 +244,34 @@ class CUNavigationFirstPageViewController: UIViewController {
         let markerHealth = GMSMarker()
         markerHealth.position = CLLocationCoordinate2D(latitude: 33.50085, longitude: -80.85204)
         markerHealth.title = "Student Health Center"
+        markerHealth.icon = GMSMarker.markerImage(with: .blue)
         markerHealth.map = mapView
-        markerHealth.opacity = 0.0
         
         let markerMSRC = GMSMarker()
         markerMSRC.position = CLLocationCoordinate2D(latitude: 33.50150, longitude: -80.85069)
         markerMSRC.title = "Molecular Science Research Center"
+        markerMSRC.icon = GMSMarker.markerImage(with: .blue)
         markerMSRC.map = mapView
-        markerMSRC.opacity = 0.0
-        
+
         let markerHistory = GMSMarker()
         markerHistory.position = CLLocationCoordinate2D(latitude: 33.50066, longitude: -80.85212)
         markerHistory.title = "Department of History & Sociology"
+        markerHistory.icon = GMSMarker.markerImage(with: .blue)
         markerHistory.map = mapView
-        markerHistory.opacity = 0.0
         
         let markerTRIO = GMSMarker()
         markerTRIO.position = CLLocationCoordinate2D(latitude: 33.50173, longitude: -80.85071)
         markerTRIO.title = "Department of TRIO/ Upward Bound"
+        markerTRIO.icon = GMSMarker.markerImage(with: .blue)
         markerTRIO.map = mapView
         markerTRIO.opacity = 0.0
         
         let markerCounseling = GMSMarker()
         markerCounseling.position = CLLocationCoordinate2D(latitude: 33.50182, longitude: -80.85059)
         markerCounseling.title = "Department of Counseling Center/ ADA"
+        markerCounseling.icon = GMSMarker.markerImage(with: .blue)
         markerCounseling.map = mapView
-        markerCounseling.opacity = 0.0
-        
+               
         let markerSponsoredProgram = GMSMarker()
         markerSponsoredProgram.position = CLLocationCoordinate2D(latitude: 33.50184, longitude: -80.85103)
         markerSponsoredProgram.title = "Department of Sponsored Programs"
