@@ -10,10 +10,12 @@ import UIKit
 
 class HealthandWellnessViewController: UIViewController {
     
+    @IBOutlet weak var HWCollectionView: UICollectionView!
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     @IBOutlet weak var headerView: UIView!
+    
     func addBottomBorders() {
        let thickness: CGFloat = 3.0
        let bottomBorder = CALayer()
@@ -24,6 +26,27 @@ class HealthandWellnessViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addBottomBorders()
+        
+        HWCollectionView.dataSource = self
+        HWCollectionView.delegate = self
+        HWCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
+    }
+}
+
+extension HealthandWellnessViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return categories.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = HWCollectionView.dequeueReusableCell(withReuseIdentifier: "H_WCollectionViewCell", for: indexPath) as! H_WCollectionViewCell
+        cell.setup(with: categories[indexPath.row])
+        return cell
+    }
+}
+
+extension HealthandWellnessViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 163, height: 175)
+    }
 }

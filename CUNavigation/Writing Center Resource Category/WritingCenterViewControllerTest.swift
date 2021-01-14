@@ -10,27 +10,37 @@ import UIKit
 
 class WritingCenterViewControllerTest : UIViewController{
     
-
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func LearnMoreButton(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string:"https://www.claflin.edu/student-life/services-support/online-writing-center")! as URL, options:[:], completionHandler: nil)
+    }
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
-    var writingCenterQ = WritingCenterClass.fetchWriting()
-    let cellScale: CGFloat = 0.6
     
     func addBottomBorders() {
-       let thickness: CGFloat = 3.0
+       let thickness: CGFloat = 2.0
        let bottomBorder = CALayer()
        bottomBorder.frame = CGRect(x:0, y: self.headerView.frame.size.height - thickness, width: self.headerView.frame.size.width, height:thickness)
        bottomBorder.backgroundColor = UIColor(red:5/255, green:31/255, blue:49/255, alpha: 1).cgColor
        headerView.layer.addSublayer(bottomBorder)
     }
     
+    var writingCenterQ = WritingCenterClass.fetchWriting()
+    //var freshmanCollege = FreshmanCollegeClass.fetchWriting()
+    
+    let cellScale: CGFloat = 0.6
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         addBottomBorders()
-        
+
+    /*    WCButtonBorder.layer.cornerRadius = 5.0
+        WCButtonBorder.clipsToBounds = true
+        WCButtonBorder.layer.borderColor = UIColor.systemBlue.cgColor
+        WCButtonBorder.layer.borderWidth = 2.0
+ */
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * cellScale)
         let cellHeight = floor(screenSize.height * cellScale)

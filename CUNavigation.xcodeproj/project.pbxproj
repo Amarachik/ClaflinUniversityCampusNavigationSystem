@@ -23,7 +23,21 @@
 		A2521CE3256B270D00E38BE0 /* WritingCenterViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2521CE2256B270D00E38BE0 /* WritingCenterViewControllerTest.swift */; };
 		A2521CE6256B271A00E38BE0 /* WritingCenterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2521CE5256B271900E38BE0 /* WritingCenterCollectionViewCell.swift */; };
 		A2521CE9256B272900E38BE0 /* WritingCenterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2521CE8256B272800E38BE0 /* WritingCenterClass.swift */; };
+		A267954525AE5258000F9D28 /* schoolBuildings.json in Resources */ = {isa = PBXBuildFile; fileRef = A267954425AE5258000F9D28 /* schoolBuildings.json */; };
 		A2C2EA76253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */; };
+		A2DBE4C2259BC59000B61249 /* FreshmanCollegeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4C1259BC59000B61249 /* FreshmanCollegeClass.swift */; };
+		A2DBE4C5259BCA2300B61249 /* FreshmanCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4C4259BCA2300B61249 /* FreshmanCollegeViewController.swift */; };
+		A2DBE4C9259BDD3200B61249 /* FreshmanCollegeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4C8259BDD3200B61249 /* FreshmanCollegeCollectionViewCell.swift */; };
+		A2DBE4D0259C03C600B61249 /* BookStoreClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4CF259C03C500B61249 /* BookStoreClass.swift */; };
+		A2DBE4D3259C03F100B61249 /* BookStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4D2259C03F100B61249 /* BookStoreViewController.swift */; };
+		A2DBE4D7259C040B00B61249 /* BookStoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4D6259C040B00B61249 /* BookStoreCollectionViewCell.swift */; };
+		A2DBE4DC259C1A7C00B61249 /* LibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4DB259C1A7C00B61249 /* LibraryCollectionViewCell.swift */; };
+		A2DBE4DF259C1A9500B61249 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4DE259C1A9500B61249 /* LibraryViewController.swift */; };
+		A2DBE4E2259C1AA500B61249 /* LibraryClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4E1259C1AA500B61249 /* LibraryClass.swift */; };
+		A2DBE4E725A2A73D00B61249 /* H&WCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4E625A2A73D00B61249 /* H&WCollectionViewCell.swift */; };
+		A2DBE4F225A2A9BE00B61249 /* HealthWellness.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4F125A2A9BE00B61249 /* HealthWellness.swift */; };
+		A2DBE4F725A62D6B00B61249 /* gradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4F625A62D6A00B61249 /* gradientBackground.swift */; };
+		A2DBE4FA25A62D8400B61249 /* gradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBE4F925A62D8400B61249 /* gradientColors.swift */; };
 		A2E61550256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E6154F256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift */; };
 		E83366FD4423066F40F0851F /* Pods_CUNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5761993E5A819A1EC08FC41 /* Pods_CUNavigation.framework */; };
 /* End PBXBuildFile section */
@@ -48,7 +62,21 @@
 		A2521CE2256B270D00E38BE0 /* WritingCenterViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingCenterViewControllerTest.swift; sourceTree = "<group>"; };
 		A2521CE5256B271900E38BE0 /* WritingCenterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingCenterCollectionViewCell.swift; sourceTree = "<group>"; };
 		A2521CE8256B272800E38BE0 /* WritingCenterClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritingCenterClass.swift; sourceTree = "<group>"; };
+		A267954425AE5258000F9D28 /* schoolBuildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schoolBuildings.json; sourceTree = "<group>"; };
 		A2C2EA75253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUNavigationFirstPageViewController.swift; sourceTree = "<group>"; };
+		A2DBE4C1259BC59000B61249 /* FreshmanCollegeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshmanCollegeClass.swift; sourceTree = "<group>"; };
+		A2DBE4C4259BCA2300B61249 /* FreshmanCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshmanCollegeViewController.swift; sourceTree = "<group>"; };
+		A2DBE4C8259BDD3200B61249 /* FreshmanCollegeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshmanCollegeCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2DBE4CF259C03C500B61249 /* BookStoreClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreClass.swift; sourceTree = "<group>"; };
+		A2DBE4D2259C03F100B61249 /* BookStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreViewController.swift; sourceTree = "<group>"; };
+		A2DBE4D6259C040B00B61249 /* BookStoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2DBE4DB259C1A7C00B61249 /* LibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2DBE4DE259C1A9500B61249 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		A2DBE4E1259C1AA500B61249 /* LibraryClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryClass.swift; sourceTree = "<group>"; };
+		A2DBE4E625A2A73D00B61249 /* H&WCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "H&WCollectionViewCell.swift"; sourceTree = "<group>"; };
+		A2DBE4F125A2A9BE00B61249 /* HealthWellness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthWellness.swift; sourceTree = "<group>"; };
+		A2DBE4F625A62D6A00B61249 /* gradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradientBackground.swift; sourceTree = "<group>"; };
+		A2DBE4F925A62D8400B61249 /* gradientColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradientColors.swift; sourceTree = "<group>"; };
 		A2E6154F256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AcademicDevelopmentCategoryViewController copy.swift"; sourceTree = "<group>"; };
 		DF9CFDA30595F067FA77FFDA /* Pods-CUNavigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUNavigation.release.xcconfig"; path = "Pods/Target Support Files/Pods-CUNavigation/Pods-CUNavigation.release.xcconfig"; sourceTree = "<group>"; };
 		E5761993E5A819A1EC08FC41 /* Pods_CUNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CUNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,15 +127,61 @@
 				A2E6154F256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift */,
 				A2521CD8256B1C5800E38BE0 /* StudentAccountsViewController.swift */,
 				A2521CDB256B1C8100E38BE0 /* ResourcesViewController.swift */,
-				A2521CE2256B270D00E38BE0 /* WritingCenterViewControllerTest.swift */,
-				A2521CE8256B272800E38BE0 /* WritingCenterClass.swift */,
-				A2521CE5256B271900E38BE0 /* WritingCenterCollectionViewCell.swift */,
 				A2521CDE256B1CA700E38BE0 /* HealthandWellnessViewController.swift */,
+				A2DBE4F625A62D6A00B61249 /* gradientBackground.swift */,
+				A2DBE4F925A62D8400B61249 /* gradientColors.swift */,
+				A2DBE4E625A2A73D00B61249 /* H&WCollectionViewCell.swift */,
+				A2DBE4F125A2A9BE00B61249 /* HealthWellness.swift */,
+				A267954425AE5258000F9D28 /* schoolBuildings.json */,
+				A2DBE4E4259C1AB600B61249 /* Library Resource Category */,
+				A2DBE4D9259C041300B61249 /* BookStore Resource Cagtegory */,
+				A2DBE4CB259BE67600B61249 /* Writing Center Resource Category */,
+				A2DBE4CD259BEAA100B61249 /* Freshman College Resource Category */,
 				A217320A2533AC4D00B3265F /* Assets.xcassets */,
 				A217320C2533AC4D00B3265F /* LaunchScreen.storyboard */,
 				A217320F2533AC4D00B3265F /* Info.plist */,
 			);
 			path = CUNavigation;
+			sourceTree = "<group>";
+		};
+		A2DBE4CB259BE67600B61249 /* Writing Center Resource Category */ = {
+			isa = PBXGroup;
+			children = (
+				A2521CE8256B272800E38BE0 /* WritingCenterClass.swift */,
+				A2521CE2256B270D00E38BE0 /* WritingCenterViewControllerTest.swift */,
+				A2521CE5256B271900E38BE0 /* WritingCenterCollectionViewCell.swift */,
+			);
+			path = "Writing Center Resource Category";
+			sourceTree = "<group>";
+		};
+		A2DBE4CD259BEAA100B61249 /* Freshman College Resource Category */ = {
+			isa = PBXGroup;
+			children = (
+				A2DBE4C4259BCA2300B61249 /* FreshmanCollegeViewController.swift */,
+				A2DBE4C8259BDD3200B61249 /* FreshmanCollegeCollectionViewCell.swift */,
+				A2DBE4C1259BC59000B61249 /* FreshmanCollegeClass.swift */,
+			);
+			path = "Freshman College Resource Category";
+			sourceTree = "<group>";
+		};
+		A2DBE4D9259C041300B61249 /* BookStore Resource Cagtegory */ = {
+			isa = PBXGroup;
+			children = (
+				A2DBE4CF259C03C500B61249 /* BookStoreClass.swift */,
+				A2DBE4D2259C03F100B61249 /* BookStoreViewController.swift */,
+				A2DBE4D6259C040B00B61249 /* BookStoreCollectionViewCell.swift */,
+			);
+			path = "BookStore Resource Cagtegory";
+			sourceTree = "<group>";
+		};
+		A2DBE4E4259C1AB600B61249 /* Library Resource Category */ = {
+			isa = PBXGroup;
+			children = (
+				A2DBE4DB259C1A7C00B61249 /* LibraryCollectionViewCell.swift */,
+				A2DBE4DE259C1A9500B61249 /* LibraryViewController.swift */,
+				A2DBE4E1259C1AA500B61249 /* LibraryClass.swift */,
+			);
+			path = "Library Resource Category";
 			sourceTree = "<group>";
 		};
 		ECC0CADE122ED7C68BAA3FDD /* Frameworks */ = {
@@ -191,6 +265,7 @@
 				7684F5FA254B6AEB00882335 /* AcademicDevelopmentCategory.storyboard in Resources */,
 				A250BB462538E03100D00F84 /* CUNavigation_FrontEnd.storyboard in Resources */,
 				73EB4131255B39290057B5D3 /* HealthAndWellness_StoryBoard.storyboard in Resources */,
+				A267954525AE5258000F9D28 /* schoolBuildings.json in Resources */,
 				A217320E2533AC4D00B3265F /* LaunchScreen.storyboard in Resources */,
 				A2521CD6256B1C0300E38BE0 /* ResourcesCategory.storyboard in Resources */,
 				A217320B2533AC4D00B3265F /* Assets.xcassets in Resources */,
@@ -261,16 +336,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2DBE4C5259BCA2300B61249 /* FreshmanCollegeViewController.swift in Sources */,
+				A2DBE4DC259C1A7C00B61249 /* LibraryCollectionViewCell.swift in Sources */,
+				A2DBE4D7259C040B00B61249 /* BookStoreCollectionViewCell.swift in Sources */,
 				A2521CDF256B1CA700E38BE0 /* HealthandWellnessViewController.swift in Sources */,
 				A2521CE6256B271A00E38BE0 /* WritingCenterCollectionViewCell.swift in Sources */,
+				A2DBE4D0259C03C600B61249 /* BookStoreClass.swift in Sources */,
+				A2DBE4F225A2A9BE00B61249 /* HealthWellness.swift in Sources */,
+				A2DBE4E725A2A73D00B61249 /* H&WCollectionViewCell.swift in Sources */,
 				A2521CDC256B1C8100E38BE0 /* ResourcesViewController.swift in Sources */,
+				A2DBE4E2259C1AA500B61249 /* LibraryClass.swift in Sources */,
 				A2521CD9256B1C5800E38BE0 /* StudentAccountsViewController.swift in Sources */,
+				A2DBE4FA25A62D8400B61249 /* gradientColors.swift in Sources */,
 				A2C2EA76253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift in Sources */,
 				A2521CE3256B270D00E38BE0 /* WritingCenterViewControllerTest.swift in Sources */,
 				A2E61550256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift in Sources */,
 				A21732062533AC4A00B3265F /* ViewController.swift in Sources */,
 				A2521CE9256B272900E38BE0 /* WritingCenterClass.swift in Sources */,
 				A21732042533AC4A00B3265F /* AppDelegate.swift in Sources */,
+				A2DBE4F725A62D6B00B61249 /* gradientBackground.swift in Sources */,
+				A2DBE4C9259BDD3200B61249 /* FreshmanCollegeCollectionViewCell.swift in Sources */,
+				A2DBE4C2259BC59000B61249 /* FreshmanCollegeClass.swift in Sources */,
+				A2DBE4DF259C1A9500B61249 /* LibraryViewController.swift in Sources */,
+				A2DBE4D3259C03F100B61249 /* BookStoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +507,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CUNavigation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CUNavigation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

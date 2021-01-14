@@ -12,10 +12,13 @@ import GoogleMaps
 import Alamofire
 import SwiftyJSON
 import CoreLocation
+import SearchTextField
 
-class CUNavigationFirstPageViewController: UIViewController {
+
+class CUNavigationFirstPageViewController: UIViewController{
     
     //outlets
+    @IBOutlet weak var BuildingsSearchTextField: SearchTextField!
     @IBOutlet weak var ExploreLabel: UILabel!
     @IBOutlet var AcademicDevelopmentRoundedIcon: UIImageView!
     @IBOutlet var ResourcesRoundedIcon: UIImageView!
@@ -29,10 +32,14 @@ class CUNavigationFirstPageViewController: UIViewController {
     }
     
     let locationManger = CLLocationManager()
+   // let BuildingSearchTextField = SearchTextField(frame: CGRect(x: 10, y: 100, width: 200, height: 40))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
+        
+        configureSimpleSearchTextField()
+        
         checkLocationServces()
         let camera = GMSCameraPosition.camera(withLatitude: 33.49969, longitude: -80.85405, zoom: 15)
         mapView.camera = camera
@@ -309,7 +316,38 @@ class CUNavigationFirstPageViewController: UIViewController {
             break
         }
     }
+    
+    fileprivate func configureSimpleSearchTextField() {
+        // Start visible even without user's interaction as soon as created - Default: false
+       // BuildingsSearchTextField.startVisibleWithoutInteraction = false
+        
+        // Set data source
+        let campusBuildings = CUBuildings()
+        BuildingsSearchTextField.filterStrings(campusBuildings)
+    }
+    
+    fileprivate func CUBuildings() -> [String] {
+        if let path = Bundle.main.path(forResource: "schoolBuildings", ofType: "json") {
+            do {
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .dataReadingMapped)
+                let jsonResult = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [[String:String]]
+                
+                var buildingNames = [String]()
+                for building in jsonResult {
+                    buildingNames.append(building["name"]!)
+                }
+                
+                return buildingNames
+            } catch {
+                print("Error parsing jSON: \(error)")
+                return []
+            }
+        }
+        return []
+    }
+
 }
+
 
 extension CUNavigationFirstPageViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -333,3 +371,67 @@ StudentAccountsRoundedIcon.layer.cornerRadius = 30
 StudentAccountsRoundedIcon.clipsToBounds = true
 HealthWellnessRoundedIcon.layer.cornerRadius = 30
 HealthWellnessRoundedIcon.clipsToBounds = true */
+/*     BuildingsSearchTextField.filterStrings(["James S. Thomas Science Center (JST)", "Historical Tingley Memorial Hall", "Arthur Rose Museum", "W.V. Middleton Fine Arts Center", "University Music Center", "Student Center", "Kliest Hall (Female Residence)",  "Alice Carson Tisdale Honors College", "Ministers' Hall","Fred P. Corson Hall", "Trustee Hall", "Grace T. Kennedy Business and Communications", "Mary E. Dunton Hall", "James and Dorothy Z. Elmore Chapel", "Laymen Hall", "Bowen Hall/ The Freshman College", "Asbury Residence Hall", "H V Manning Library","SRC South", "SRC East","SRC North", "SRC West", "Claflin Commons", "High-Rise Residence Hall", "University Dining Facility/ Panther Plaza", "Jonas T. Kennedy Health and Physical Education", "JST Annex", "Student Health Center", "Molecular Science Research Center", "Department of History & Sociology", "Department of TRIO/ Upward Bound", "Department of Counseling Center/ ADA", "Department of Sponsored Programs"])
+     BuildingsSearchTextField.comparisonOptions = [.caseInsensitive]
+     
+     BuildingsSearchTextField.maxNumberOfResults = 5
+     
+     BuildingsSearchTextField.highlightAttributes = [NSAttributedString.Key.backgroundColor: UIColor.blue, NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 12)]
+     BuildingsSearchTextField.startVisible = true
+     
+     BuildingsSearchTextField.forceNoFiltering = true
+     BuildingsSearchTextField.minCharactersNumberToStartFiltering = 3
+     
+     BuildingsSearchTextField.userStoppedTypingHandler = {
+         if let criteria = self.BuildingsSearchTextField.text {
+             if criteria.count > 1 {
+                 self.BuildingsSearchTextField.showLoadingIndicator()
+                 
+ 
+         }
+     }
+ }
+ fileprivate func filterAcronymInBackground(_ criteria: String, callback: @escaping ((_ results: [SearchTextFieldItem]) -> Void)) {
+     let url = URL(string: "http://www.nactem.ac.uk/software/acromine/dictionary.py?sf=\(criteria)")
+     
+     if let url = url {
+         let task = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
+             do {
+                 if let data = data {
+                     let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String:AnyObject]]
+                     
+                     if let firstElement = jsonData.first {
+                         let jsonResults = firstElement["lfs"] as! [[String: AnyObject]]
+                         
+                         var results = [SearchTextFieldItem]()
+                         
+                         for result in jsonResults {
+                             results.append(SearchTextFieldItem(title: result["lf"] as! String, subtitle: criteria.uppercased(), image: UIImage(named: "acronym_icon")))
+                         }
+                         
+                         DispatchQueue.main.async {
+                             callback(results)
+                         }
+                     } else {
+                         DispatchQueue.main.async {
+                             callback([])
+                         }
+                     }
+                 } else {
+                     DispatchQueue.main.async {
+                         callback([])
+                     }
+                 }
+             }
+             catch {
+                 print("Network error: \(error)")
+                 DispatchQueue.main.async {
+                     callback([])
+                 }
+             }
+         })
+         
+         task.resume()
+     }
+ }
+ */

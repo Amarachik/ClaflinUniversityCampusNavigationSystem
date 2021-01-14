@@ -13,6 +13,7 @@ class WritingCenterCollectionViewCell: UICollectionViewCell
     @IBOutlet weak var featuredImageView: UIImageView!
     @IBOutlet weak var backgroundColorView: UIView!
     @IBOutlet weak var writingCenterLabel: UILabel!
+    @IBOutlet weak var WCImageDescriptions: UILabel!
     
     var writingCenter: WritingCenterClass! {
         didSet {
@@ -20,13 +21,19 @@ class WritingCenterCollectionViewCell: UICollectionViewCell
         }
     }
     
+    
     func updateUI(){
         if let writingCenter = writingCenter {
             featuredImageView.image = writingCenter.featuredImage
+                
             backgroundColorView.backgroundColor = writingCenter.color
-        } else {
+         //   writingCenterLabel.text = writingCenter.title
+            WCImageDescriptions.text = writingCenter.title
+            } else {
             featuredImageView.image = nil
             backgroundColorView.backgroundColor = nil
+           // writingCenterLabel.text = nil
+            WCImageDescriptions.text = nil
         }
         
         backgroundColorView.layer.cornerRadius = 10.0
