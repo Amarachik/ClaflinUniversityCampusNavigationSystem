@@ -10,42 +10,136 @@ import SwiftUI
 import UIKit
 import GoogleMaps
 import Alamofire
+import MapKit
 import SwiftyJSON
 import CoreLocation
-import SearchTextField
 
+class CUNavigationFirstPageViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-class CUNavigationFirstPageViewController: UIViewController{
-    
     //outlets
-    @IBOutlet weak var BuildingsSearchTextField: SearchTextField!
+  
+    @IBOutlet weak var BuildingsSearchTextField: UITextField!
     @IBOutlet weak var ExploreLabel: UILabel!
-    @IBOutlet var AcademicDevelopmentRoundedIcon: UIImageView!
-    @IBOutlet var ResourcesRoundedIcon: UIImageView!
-    @IBOutlet var StudentAccountsRoundedIcon: UIImageView!
-    @IBOutlet var HealthWellnessRoundedIcon: UIImageView!
     @IBOutlet weak var mapView: GMSMapView!
-    @IBAction func ZoomInBtn(_ sender: Any) {
-    }
+    @IBOutlet weak var AcadDevBtn: UIButton!
+    @IBOutlet weak var StudActBtn: UIButton!
+    @IBOutlet weak var HealthWellBtn: UIButton!
+    @IBOutlet weak var ResourcesBtn: UIButton!
     
-    @IBAction func ZoomOutButton(_ sender: Any) {
+    var buildingObjectHolder: buildingPicker?
+    
+    @IBAction func PickerNavBtn(_ sender: Any) {
+        if let buildingObject = buildingObjectHolder {
+            openInMaps(latitutde: buildingObject.buildingLatitude, longitude: buildingObject.buildingLongitude, name: buildingObject.building)
+        }
     }
     
     let locationManger = CLLocationManager()
-   // let BuildingSearchTextField = SearchTextField(frame: CGRect(x: 10, y: 100, width: 200, height: 40))
+    class buildingPicker {
+        let building : String
+        let buildingLongitude : Double
+        let buildingLatitude : Double
+        
+        init(building: String, buildingLongitude : Double, buildingLatitude: Double) {
+            self.building = building
+            self.buildingLongitude = buildingLongitude
+            self.buildingLatitude = buildingLatitude
+        }
+    }
+    var buildings:[buildingPicker] = [
+        buildingPicker(building: "James S. Thomas Science Center", buildingLongitude: -80.85424, buildingLatitude: 33.49897),
+        buildingPicker(building: "Historical Tingley Memorial Hall", buildingLongitude: -80.85436, buildingLatitude: 33.49844),
+        buildingPicker(building: "Arthur Rose Museum", buildingLongitude: -80.85474, buildingLatitude: 33.49821),
+        buildingPicker(building: "W.V. Middleton Fine Arts Center", buildingLongitude: -80.85476, buildingLatitude: 33.49782),
+        buildingPicker(building: "University Music Center", buildingLongitude: -80.85490, buildingLatitude: 33.49760),
+        buildingPicker(building: "Student Center", buildingLongitude: -80.85515, buildingLatitude: 33.49690),
+        buildingPicker(building: "Kliest Hall (Female Residence)", buildingLongitude: -80.85480, buildingLatitude: 33.49655),
+        buildingPicker(building: "Alice Carson Tisdale Honors College", buildingLongitude: 33.49674, buildingLatitude: -80.85434),
+        buildingPicker(building: "Ministers' Hall", buildingLongitude: -80.85426, buildingLatitude: 33.49703),
+        buildingPicker(building: "Fred P. Corson Hall", buildingLongitude: -80.85376, buildingLatitude: 33.49711),
+        buildingPicker(building: "Trustee Hall", buildingLongitude: -80.85453, buildingLatitude: 33.49741),
+        buildingPicker(building: "Grace T. Kennedy Business and Communications", buildingLongitude: -80.85407, buildingLatitude: 33.49761),
+        buildingPicker(building: "Mary E. Dunton Hall", buildingLongitude: -80.853169, buildingLatitude: 33.497524),
+        buildingPicker(building: "James and Dorothy Z. Elmore Chapel", buildingLongitude: -80.85263, buildingLatitude: 33.49791),
+        buildingPicker(building: "Laymen Hall", buildingLongitude: -80.85321, buildingLatitude: 33.49816),
+        buildingPicker(building: "Bowen Hall/ The Freshman College", buildingLongitude: -80.85353, buildingLatitude: 33.49834),
+        buildingPicker(building: "Asbury Residence Hall", buildingLongitude: -80.85309, buildingLatitude: 33.49853),
+        buildingPicker(building: "H V Manning Library", buildingLongitude: -80.85346, buildingLatitude: 33.49907),
+        buildingPicker(building: "SRC South", buildingLongitude: -80.85230, buildingLatitude: 33.49841),
+        buildingPicker(building: "SRC East", buildingLongitude: -80.85196, buildingLatitude: 33.49865),
+        buildingPicker(building: "SRC North", buildingLongitude: -80.85210, buildingLatitude: 33.49918),
+        buildingPicker(building: "SRC West", buildingLongitude: 33.49964, buildingLatitude: -80.85227),
+        buildingPicker(building: "Claflin Commons", buildingLongitude: -80.85276, buildingLatitude: 33.49959),
+        buildingPicker(building: "High-Rise Residence Hall", buildingLongitude: -80.85332, buildingLatitude: 33.49985),
+        buildingPicker(building: "University Dining Facility/ Panther Plaza", buildingLongitude: -80.85240, buildingLatitude: 33.49858),
+        buildingPicker(building: "Jonas T. Kennedy Health and Physical Education", buildingLongitude: -80.85269, buildingLatitude: 33.50147),
+        buildingPicker(building: "JST Annex", buildingLongitude: -80.85187, buildingLatitude: 33.50187),
+        buildingPicker(building: "Student Health Center", buildingLongitude: -80.85204, buildingLatitude: 33.50085),
+        buildingPicker(building: "Molecular Science Research Center", buildingLongitude: -80.85069, buildingLatitude: 33.50150),
+        buildingPicker(building: "Department of History & Sociology", buildingLongitude: -80.85212, buildingLatitude: 33.50066),
+        buildingPicker(building: "Department of TRIO/ Upward Bound", buildingLongitude: -80.85071, buildingLatitude: 33.50173),
+        buildingPicker(building: "Department of Counseling Center/ ADA", buildingLongitude: -80.85059, buildingLatitude: 33.50182),
+        buildingPicker(building: "Department of Sponsored Programs", buildingLongitude: -80.85103, buildingLatitude: 33.50184),
+    ]
+
+    var pickerView = UIPickerView()
+   // var filteredData = [String]()
+    
+    @objc func donePressed(){
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
+        AcadDevBtn.layer.cornerRadius = 7.0
+        AcadDevBtn.layer.borderWidth = 2
+        AcadDevBtn.layer.borderColor = UIColor(red:0/255, green:64/255, blue:103/255, alpha: 1).cgColor
+        AcadDevBtn.layer.masksToBounds = true
         
-        configureSimpleSearchTextField()
+        ResourcesBtn.layer.cornerRadius = 7.0
+        ResourcesBtn.layer.borderWidth = 2
+        ResourcesBtn.layer.borderColor = UIColor(red:27/255, green:108/255, blue:162/255, alpha: 1).cgColor
+        ResourcesBtn.layer.masksToBounds = true
+        
+        HealthWellBtn.layer.cornerRadius = 7.0
+        HealthWellBtn.layer.borderWidth = 2
+        HealthWellBtn.layer.borderColor = UIColor(red:27/255, green:106/255, blue:161/255, alpha: 1).cgColor
+        HealthWellBtn.layer.masksToBounds = true
+        
+        StudActBtn.layer.cornerRadius = 7.0
+        StudActBtn.layer.borderWidth = 2
+        StudActBtn.layer.borderColor = UIColor(red:117/255, green:171/255, blue:220/255, alpha: 1).cgColor
+        StudActBtn.layer.masksToBounds = true
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        // BuildingsSearchTextField.delegate = self
+        
+        //toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        //bar button
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneBtn], animated: true)
+        BuildingsSearchTextField.inputAccessoryView = toolbar
+
+        let row = UserDefaults.standard.integer(forKey: "pickerViewRow")
+        pickerView.selectRow(row, inComponent: 0, animated: false)
+        print (row)
+      
+        BuildingsSearchTextField.inputView = pickerView
+       // BuildingsSearchTextField.textAlignment = .center
+        BuildingsSearchTextField.placeholder = "Select a Building"
+        BuildingsSearchTextField.leftViewMode = .always
+        
         
         checkLocationServces()
-        let camera = GMSCameraPosition.camera(withLatitude: 33.49969, longitude: -80.85405, zoom: 15)
+        let camera = GMSCameraPosition.camera(withLatitude: 33.49838, longitude: -80.85353, zoom: 100)
         mapView.camera = camera
-        mapView.mapType = .satellite
+        mapView.mapType = .hybrid
         mapView.settings.compassButton = true
-        mapView.animate(toZoom: 17)
+        mapView.animate(toZoom: 18)
         
         let sourceLocation = "\(33.49897), \(-80.85424)"
         let destinationLocation = "\(33.50147), \(-80.85269)"
@@ -79,10 +173,9 @@ class CUNavigationFirstPageViewController: UIViewController{
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: 33.49897, longitude: -80.85424)
         marker.icon = GMSMarker.markerImage(with: .blue)
+        marker.setIconSize(scaledToSize: .init(width: 20, height: 30))
         marker.title = "James S. Thomas Science Center (JST)"
-   /*     marker.snippet = "James S. Thomas Science Center (JST) houses students interested in STEM (Science, Technology, Engineering, and Mathematics). The building consists classrooms, labs and offices for the biology, chemistry, mathematics, and computer science department" */
         marker.map = mapView
-        //marker.opacity = 0.0
 
         let markerTingley = GMSMarker()
         markerTingley.position = CLLocationCoordinate2D(latitude: 33.49844, longitude: -80.85436)
@@ -94,9 +187,10 @@ class CUNavigationFirstPageViewController: UIViewController{
         let markerARM = GMSMarker()
         markerARM.position = CLLocationCoordinate2D(latitude: 33.49821, longitude: -80.85474)
         markerARM.icon = GMSMarker.markerImage(with: .blue)
+        markerARM.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerARM.title = "Arthur Rose Museum"
         markerARM.map = mapView
-        markerARM.opacity = 0.0
+        //markerARM.opacity = 0.0
         
         let markerWVM = GMSMarker()
         markerWVM.position = CLLocationCoordinate2D(latitude: 33.49782, longitude: -80.85476)
@@ -107,26 +201,31 @@ class CUNavigationFirstPageViewController: UIViewController{
         
         let markerUMC = GMSMarker()
         markerUMC.position = CLLocationCoordinate2D(latitude: 33.49760, longitude: -80.85490)
-        markerUMC.icon = GMSMarker.markerImage(with: .blue)
+        markerUMC.icon = GMSMarker.markerImage(with: .purple)
         markerUMC.title = "University Music Center"
         markerUMC.map = mapView
+        markerUMC.opacity = 0.0
         
         let markerStudentCenter = GMSMarker()
         markerStudentCenter.position = CLLocationCoordinate2D(latitude: 33.49690, longitude: -80.85515)
         markerStudentCenter.title = "Student Center"
         markerStudentCenter.icon = GMSMarker.markerImage(with: .blue)
+        markerStudentCenter.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerStudentCenter.map = mapView
         
         let markerKleist = GMSMarker()
         markerKleist.position = CLLocationCoordinate2D(latitude: 33.49655, longitude: -80.85480)
         markerKleist.title = "Kliest Hall (Female Residence)"
+        markerKleist.icon = GMSMarker.markerImage(with: .blue)
+        markerKleist.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerKleist.map = mapView
-        markerKleist.opacity = 0.0
+        //markerKleist.opacity = 0.0
         
         let markerHonorsCollege = GMSMarker()
         markerHonorsCollege.position = CLLocationCoordinate2D(latitude: 33.49674, longitude: -80.85434)
         markerHonorsCollege.title = "Alice Carson Tisdale Honors College"
         markerHonorsCollege.icon = GMSMarker.markerImage(with: .blue)
+        markerHonorsCollege.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerHonorsCollege.map = mapView
         
         let markerMinisterH = GMSMarker()
@@ -138,8 +237,9 @@ class CUNavigationFirstPageViewController: UIViewController{
         let markerCorson = GMSMarker()
         markerCorson.position = CLLocationCoordinate2D(latitude: 33.49711, longitude: -80.85376)
         markerCorson.title = "Fred P. Corson Hall"
+        markerCorson.icon = GMSMarker.markerImage(with: .blue)
+        markerCorson.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerCorson.map = mapView
-        markerCorson.opacity = 0.0
         
         let markerTrustee = GMSMarker()
         markerTrustee.position = CLLocationCoordinate2D(latitude: 33.49741, longitude: -80.85453)
@@ -149,15 +249,18 @@ class CUNavigationFirstPageViewController: UIViewController{
         
         let markerGTK = GMSMarker()
         markerGTK.position = CLLocationCoordinate2D(latitude: 33.49761, longitude: -80.85407)
+        markerGTK.icon = GMSMarker.markerImage(with: .blue)
+        markerGTK.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerGTK.title = "Grace T. Kennedy Business and Communications"
         markerGTK.map = mapView
-        markerGTK.opacity = 0.0
         
         let markerDunton = GMSMarker()
         markerDunton.position = CLLocationCoordinate2D(latitude: 33.497524, longitude: -80.853169)
+        markerDunton.icon = GMSMarker.markerImage(with: .blue)
+        markerDunton.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerDunton.title = "Mary E. Dunton Hall"
         markerDunton.map = mapView
-        markerDunton.opacity = 0.0
+        
         
         let markerChapel = GMSMarker()
         markerChapel.position = CLLocationCoordinate2D(latitude: 33.49791, longitude: -80.85263)
@@ -173,9 +276,10 @@ class CUNavigationFirstPageViewController: UIViewController{
         
         let markerBowen = GMSMarker()
         markerBowen.position = CLLocationCoordinate2D(latitude: 33.49834, longitude: -80.85353)
+        markerBowen.icon = GMSMarker.markerImage(with: .blue)
+        markerBowen.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerBowen.title = "Bowen Hall/ The Freshman College"
         markerBowen.map = mapView
-        markerBowen.opacity = 0.0
         
         let markerAsbury = GMSMarker()
         markerAsbury.position = CLLocationCoordinate2D(latitude: 33.49853, longitude: -80.85309)
@@ -197,6 +301,8 @@ class CUNavigationFirstPageViewController: UIViewController{
         let markerSouth = GMSMarker()
         markerSouth.position = CLLocationCoordinate2D(latitude: 33.49841, longitude: -80.85230)
         markerSouth.title = "SRC South"
+        markerSouth.icon = GMSMarker.markerImage(with: .blue)
+        markerSouth.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerSouth.map = mapView
         markerSouth.opacity = 0.0
         
@@ -204,17 +310,22 @@ class CUNavigationFirstPageViewController: UIViewController{
         markerEast.position = CLLocationCoordinate2D(latitude: 33.49865, longitude: -80.85196)
         markerEast.title = "SRC East"
         markerEast.icon = GMSMarker.markerImage(with: .blue)
+        markerEast.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerEast.map = mapView
         
         let markerNorth = GMSMarker()
         markerNorth.position = CLLocationCoordinate2D(latitude: 33.49918, longitude: -80.85210)
         markerNorth.title = "SRC North"
+        markerNorth.icon = GMSMarker.markerImage(with: .blue)
+        markerNorth.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerNorth.map = mapView
         markerNorth.opacity = 0.0
         
         let markerWest = GMSMarker()
         markerWest.position = CLLocationCoordinate2D(latitude: 33.49964, longitude: -80.85227)
         markerWest.title = "SRC West"
+        markerWest.icon = GMSMarker.markerImage(with: .blue)
+        markerWest.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerWest.map = mapView
         markerWest.opacity = 0.0
         
@@ -223,23 +334,27 @@ class CUNavigationFirstPageViewController: UIViewController{
         markerCommons.title = "Claflin Commons"
         markerCommons.icon = GMSMarker.markerImage(with: .blue)
         markerCommons.map = mapView
+        markerCommons.opacity = 0.0
         
         let markerHighRise = GMSMarker()
         markerHighRise.position = CLLocationCoordinate2D(latitude: 33.49985, longitude: -80.85332)
+        markerHighRise.icon = GMSMarker.markerImage(with: .blue)
+        markerHighRise.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerHighRise.title = "High-Rise Residence Hall"
         markerHighRise.map = mapView
-        markerHighRise.opacity = 0.0
         
         let markerDining = GMSMarker()
         markerDining.position = CLLocationCoordinate2D(latitude: 33.49858, longitude: -80.85240)
         markerDining.title = "University Dining Facility/ Panther Plaza"
+        markerDining.icon = GMSMarker.markerImage(with: .blue)
+        markerDining.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerDining.map = mapView
-        markerDining.opacity = 0.0
         
         let markerJTK = GMSMarker()
         markerJTK.position = CLLocationCoordinate2D(latitude: 33.50147, longitude: -80.85269)
         markerJTK.title = "Jonas T. Kennedy Health and Physical Education"
         markerJTK.icon = GMSMarker.markerImage(with: .blue)
+        markerJTK.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerJTK.map = mapView
         
         let markerAnnex = GMSMarker()
@@ -252,18 +367,21 @@ class CUNavigationFirstPageViewController: UIViewController{
         markerHealth.position = CLLocationCoordinate2D(latitude: 33.50085, longitude: -80.85204)
         markerHealth.title = "Student Health Center"
         markerHealth.icon = GMSMarker.markerImage(with: .blue)
+        markerHealth.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerHealth.map = mapView
         
         let markerMSRC = GMSMarker()
         markerMSRC.position = CLLocationCoordinate2D(latitude: 33.50150, longitude: -80.85069)
         markerMSRC.title = "Molecular Science Research Center"
         markerMSRC.icon = GMSMarker.markerImage(with: .blue)
+        markerMSRC.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerMSRC.map = mapView
 
         let markerHistory = GMSMarker()
         markerHistory.position = CLLocationCoordinate2D(latitude: 33.50066, longitude: -80.85212)
         markerHistory.title = "Department of History & Sociology"
         markerHistory.icon = GMSMarker.markerImage(with: .blue)
+        markerHistory.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerHistory.map = mapView
         
         let markerTRIO = GMSMarker()
@@ -277,6 +395,7 @@ class CUNavigationFirstPageViewController: UIViewController{
         markerCounseling.position = CLLocationCoordinate2D(latitude: 33.50182, longitude: -80.85059)
         markerCounseling.title = "Department of Counseling Center/ ADA"
         markerCounseling.icon = GMSMarker.markerImage(with: .blue)
+        markerCounseling.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerCounseling.map = mapView
                
         let markerSponsoredProgram = GMSMarker()
@@ -284,6 +403,66 @@ class CUNavigationFirstPageViewController: UIViewController{
         markerSponsoredProgram.title = "Department of Sponsored Programs"
         markerSponsoredProgram.map = mapView
         markerSponsoredProgram.opacity = 0.0
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       /* if filteredData.isEmpty {
+            return filteredData.count
+        } */
+        return buildings.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return buildings[row].building
+    }
+    //Capture the picker view selection
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+        let buildingObject = buildings[row]
+        BuildingsSearchTextField.text = buildingObject.building
+        self.view.endEditing(true)
+        //Save selected row integer in User Defaults
+        
+        UserDefaults.standard.set(row, forKey: "pickerViewRow")
+        //BuildingsSearchTextField.resignFirstResponder()
+        //OPEN THE MAPS FROM HERE WITH THE BUILDING OBJECT'S CORDINATES
+        buildingObjectHolder = buildingObject
+    }
+    
+    /*  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if let text = textField.text {
+            filterText(text+string)
+        }
+        
+        return true
+    }
+    
+     func filterText(_ query: String) {
+        filteredData.removeAll()
+        for string in buildings {
+            if string.building.starts(with: query) {
+                filteredData.append(string.building)
+            }
+        }
+        self.pickerView.reloadAllComponents()
+    } */
+    
+    func openInMaps(latitutde:CLLocationDegrees, longitude:CLLocationDegrees, name: String){
+        let regionDistance:CLLocationDistance = 1000;
+        let coordinates = CLLocationCoordinate2DMake(latitutde, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+        
+        let placemark = MKPlacemark(coordinate: coordinates)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = name
+        mapItem.openInMaps(launchOptions: options)
     }
    
     func setupLocationManager() {
@@ -316,38 +495,7 @@ class CUNavigationFirstPageViewController: UIViewController{
             break
         }
     }
-    
-    fileprivate func configureSimpleSearchTextField() {
-        // Start visible even without user's interaction as soon as created - Default: false
-       // BuildingsSearchTextField.startVisibleWithoutInteraction = false
-        
-        // Set data source
-        let campusBuildings = CUBuildings()
-        BuildingsSearchTextField.filterStrings(campusBuildings)
-    }
-    
-    fileprivate func CUBuildings() -> [String] {
-        if let path = Bundle.main.path(forResource: "schoolBuildings", ofType: "json") {
-            do {
-                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .dataReadingMapped)
-                let jsonResult = try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! [[String:String]]
-                
-                var buildingNames = [String]()
-                for building in jsonResult {
-                    buildingNames.append(building["name"]!)
-                }
-                
-                return buildingNames
-            } catch {
-                print("Error parsing jSON: \(error)")
-                return []
-            }
-        }
-        return []
-    }
-
 }
-
 
 extension CUNavigationFirstPageViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -358,80 +506,12 @@ extension CUNavigationFirstPageViewController: CLLocationManagerDelegate {
         
     }
 }
-
-//Rounds the icons on the First Storyboard
-/*     AcademicDevelopmentRoundedIcon.layer.cornerRadius = AcademicDevelopmentRoundedIcon.frame.height/2
-AcademicDevelopmentRoundedIcon.layer.masksToBounds = false
-AcademicDevelopmentRoundedIcon.clipsToBounds = true
-AcademicDevelopmentRoundedIcon.layer.borderWidth = 1
-
-ResourcesRoundedIcon.layer.cornerRadius = 30
-ResourcesRoundedIcon.clipsToBounds = true
-StudentAccountsRoundedIcon.layer.cornerRadius = 30
-StudentAccountsRoundedIcon.clipsToBounds = true
-HealthWellnessRoundedIcon.layer.cornerRadius = 30
-HealthWellnessRoundedIcon.clipsToBounds = true */
-/*     BuildingsSearchTextField.filterStrings(["James S. Thomas Science Center (JST)", "Historical Tingley Memorial Hall", "Arthur Rose Museum", "W.V. Middleton Fine Arts Center", "University Music Center", "Student Center", "Kliest Hall (Female Residence)",  "Alice Carson Tisdale Honors College", "Ministers' Hall","Fred P. Corson Hall", "Trustee Hall", "Grace T. Kennedy Business and Communications", "Mary E. Dunton Hall", "James and Dorothy Z. Elmore Chapel", "Laymen Hall", "Bowen Hall/ The Freshman College", "Asbury Residence Hall", "H V Manning Library","SRC South", "SRC East","SRC North", "SRC West", "Claflin Commons", "High-Rise Residence Hall", "University Dining Facility/ Panther Plaza", "Jonas T. Kennedy Health and Physical Education", "JST Annex", "Student Health Center", "Molecular Science Research Center", "Department of History & Sociology", "Department of TRIO/ Upward Bound", "Department of Counseling Center/ ADA", "Department of Sponsored Programs"])
-     BuildingsSearchTextField.comparisonOptions = [.caseInsensitive]
-     
-     BuildingsSearchTextField.maxNumberOfResults = 5
-     
-     BuildingsSearchTextField.highlightAttributes = [NSAttributedString.Key.backgroundColor: UIColor.blue, NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 12)]
-     BuildingsSearchTextField.startVisible = true
-     
-     BuildingsSearchTextField.forceNoFiltering = true
-     BuildingsSearchTextField.minCharactersNumberToStartFiltering = 3
-     
-     BuildingsSearchTextField.userStoppedTypingHandler = {
-         if let criteria = self.BuildingsSearchTextField.text {
-             if criteria.count > 1 {
-                 self.BuildingsSearchTextField.showLoadingIndicator()
-                 
- 
-         }
-     }
- }
- fileprivate func filterAcronymInBackground(_ criteria: String, callback: @escaping ((_ results: [SearchTextFieldItem]) -> Void)) {
-     let url = URL(string: "http://www.nactem.ac.uk/software/acromine/dictionary.py?sf=\(criteria)")
-     
-     if let url = url {
-         let task = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
-             do {
-                 if let data = data {
-                     let jsonData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String:AnyObject]]
-                     
-                     if let firstElement = jsonData.first {
-                         let jsonResults = firstElement["lfs"] as! [[String: AnyObject]]
-                         
-                         var results = [SearchTextFieldItem]()
-                         
-                         for result in jsonResults {
-                             results.append(SearchTextFieldItem(title: result["lf"] as! String, subtitle: criteria.uppercased(), image: UIImage(named: "acronym_icon")))
-                         }
-                         
-                         DispatchQueue.main.async {
-                             callback(results)
-                         }
-                     } else {
-                         DispatchQueue.main.async {
-                             callback([])
-                         }
-                     }
-                 } else {
-                     DispatchQueue.main.async {
-                         callback([])
-                     }
-                 }
-             }
-             catch {
-                 print("Network error: \(error)")
-                 DispatchQueue.main.async {
-                     callback([])
-                 }
-             }
-         })
-         
-         task.resume()
-     }
- }
- */
+extension GMSMarker {
+    func setIconSize(scaledToSize newSize: CGSize) {
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        icon?.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        icon = newImage
+    }
+}

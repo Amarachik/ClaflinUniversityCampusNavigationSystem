@@ -21,10 +21,10 @@ class FreshmanCollegeClass {
     
     static func fetchWriting() -> [FreshmanCollegeClass] {
         return [
-            FreshmanCollegeClass(featuredImage: UIImage(named: "FRCollege")!, color: UIColor(red: 63/255.0, green: 71/255.0, blue: 80/255.0, alpha: 0.7), title: " "),
-            FreshmanCollegeClass(featuredImage: UIImage(named: "FC")!, color: UIColor(red: 105/255.0, green: 80/255.0, blue: 227/255.0, alpha: 0.7), title: "Writing Center Room"),
-            FreshmanCollegeClass(featuredImage: UIImage(named: "write-a-short-story-or-any-body-of-writing")!, color: UIColor(red: 240/255.0, green: 133/255.0, blue: 91/255.0, alpha: 0.7), title: " "),
-            FreshmanCollegeClass(featuredImage: UIImage(named: "WC2")!, color: UIColor(red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 0.7), title: "Writing Center Room"),
+            FreshmanCollegeClass(featuredImage: UIImage(named: "FreshmanC")!, color: UIColor(red: 105/255.0, green: 80/255.0, blue: 227/255.0, alpha: 0.7), title: "CU Freshman College"),
+            FreshmanCollegeClass(featuredImage: UIImage(named: "ComputerLab")!, color: UIColor(red: 240/255.0, green: 133/255.0, blue: 91/255.0, alpha: 0.7), title: "Computer Lab"),
+            FreshmanCollegeClass(featuredImage: UIImage(named: "TutoringRoom")!, color: UIColor(red: 63/255.0, green: 71/255.0, blue: 80/255.0, alpha: 0.7), title: "Tutoring Room"),
+            FreshmanCollegeClass(featuredImage: UIImage(named: "ComputerLab2")!, color: UIColor(red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 0.7), title: "Computer Lab"),
         ]
     }
 }

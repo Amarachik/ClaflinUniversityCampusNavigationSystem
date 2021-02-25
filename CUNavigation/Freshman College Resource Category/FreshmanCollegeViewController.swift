@@ -6,6 +6,7 @@
 //  Copyright © 2020 Amarachi Kalu-Onuma. All rights reserved.
 //
 
+import MapKit
 import UIKit
 
 class FreshmanCollegeViewController: UIViewController {
@@ -18,7 +19,21 @@ class FreshmanCollegeViewController: UIViewController {
     }
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var freshmanCollegeCollectionView: UICollectionView!
-    
+    @IBAction func FCDirections(_ sender: Any) {
+        //Defining destination
+        let latitutde:CLLocationDegrees = 33.49834
+        let longitude:CLLocationDegrees = -80.85353
+        let regionDistance:CLLocationDistance = 1000;
+        let coordinates = CLLocationCoordinate2DMake(latitutde, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+        
+        let placemark = MKPlacemark(coordinate: coordinates)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Bowen Hall - Freshman College"
+        mapItem.openInMaps(launchOptions: options)
+    }
     func addBottomBorders() {
        let thickness: CGFloat = 2.0
        let bottomBorder = CALayer()

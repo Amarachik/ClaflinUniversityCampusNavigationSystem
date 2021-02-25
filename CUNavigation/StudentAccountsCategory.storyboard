@@ -1,108 +1,299 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0fl-4q-tLB">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SDp-ZY-6Kv">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Student Accounts View Controller-->
-        <scene sceneID="7Kq-4r-GFL">
+        <!--Welcome to the Business Office-->
+        <scene sceneID="Rgo-st-3eM">
             <objects>
-                <viewController id="0fl-4q-tLB" customClass="StudentAccountsViewController" customModule="CUNavigation" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PU7-ZU-Vzq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="J4N-I8-f1W" customClass="BusinessOffViewController" customModule="CUNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sYz-3w-MU3">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dollarsign.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kIj-vn-GxU">
-                                <rect key="frame" x="46" y="141" width="66" height="72"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BusinessTrans" translatesAutoresizingMaskIntoConstraints="NO" id="Vjf-BM-avn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="403"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.22044852379999999" green="0.35034453869999999" blue="0.52158671619999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banknote" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0US-7B-0pP">
-                                <rect key="frame" x="46" y="280" width="66" height="72"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yI7-ea-7MZ">
+                                <rect key="frame" x="287" y="733" width="107" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.4464702606" green="0.56244611739999995" blue="0.72550737860000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qs9-OO-PIk">
-                                <rect key="frame" x="33" y="210" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Financial Aid">
-                                    <color key="titleColor" systemColor="labelColor"/>
+                                <color key="tintColor" red="0.018983135000000002" green="0.1204049662" blue="0.19608661529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Directions " image="paperplane" catalog="system">
+                                    <color key="titleColor" red="0.045752286910000002" green="0.1205563918" blue="0.18824267389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="BusinessOffDirections:" destination="J4N-I8-f1W" eventType="touchUpInside" id="GMl-yY-opa"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDA-ch-UpL">
-                                <rect key="frame" x="22" y="352" width="114" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABOUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqx-82-h2G">
+                                <rect key="frame" x="20" y="499" width="58" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Cashier's Office">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="building.2.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5SR-8d-UGN">
-                                <rect key="frame" x="311" y="139.5" width="66" height="72"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="0.018983135000000002" green="0.1204049662" blue="0.19608661529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SFn-ft-e30">
+                                <rect key="frame" x="16" y="531" width="378" height="1"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.090804643929999998" green="0.2055507302" blue="0.34904947879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1a-CW-sIP">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngQ-ZC-yKw">
-                                        <rect key="frame" x="15" y="50" width="133" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                        <color key="tintColor" red="0.045752286910000002" green="0.1205563918" blue="0.18824267389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title=" Back" image="chevron.backward.circle" catalog="system">
-                                            <color key="titleColor" red="0.045752286910000002" green="0.1205563918" blue="0.18824267389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="backButton:" destination="0fl-4q-tLB" eventType="touchUpInside" id="ZSv-tB-GF4"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Accounts " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYq-FK-9Ei">
-                                        <rect key="frame" x="137" y="60" width="147" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" red="0.018983135000000002" green="0.1204049662" blue="0.19608661529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.041461013259999999" green="0.10892070080000001" blue="0.16863393779999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLw-8v-Bc7">
-                                <rect key="frame" x="282" y="210" width="112" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wlk-SG-vqV">
+                                <rect key="frame" x="16" y="531" width="392" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Business Office">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                            </button>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">The University's Business office helps students set up payment plans for tuition to reduce the financial load by splitting fees into three payments. The office also facilitates student refund checks, book coupons.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.13839846850000001" blue="0.23313367369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="8Pa-8R-xSi"/>
+                        <viewLayoutGuide key="safeArea" id="QcC-ed-YNn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <connections>
-                        <outlet property="headerView" destination="b1a-CW-sIP" id="cCC-QS-UPi"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Welcome to the Business Office" id="dpr-Ef-26G"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ilv-dM-Dqe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1aO-cp-FMU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1200" y="-545.08928571428567"/>
+            <point key="canvasLocation" x="-384.11214953271025" y="571.49028077753781"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="93b-ju-fFC">
+            <objects>
+                <tabBarController id="SDp-ZY-6Kv" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tiS-Yx-RBo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.079726062720000004" green="0.3092777431" blue="0.36343207960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.076102189719676971" green="0.1874738335609436" blue="0.30243909358978271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="89U-6o-Wcv" kind="relationship" relationship="viewControllers" id="GF5-xV-VMW"/>
+                        <segue destination="atQ-YP-an0" kind="relationship" relationship="viewControllers" id="5Wu-nX-v6f"/>
+                        <segue destination="6oo-3H-zxe" kind="relationship" relationship="viewControllers" id="7VC-c8-mXT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DDb-8c-7Go" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-384" y="-1031"/>
+        </scene>
+        <!--Cashier's Office-->
+        <scene sceneID="NL9-Iq-Z11">
+            <objects>
+                <navigationController id="89U-6o-Wcv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cashier's Office" image="dollarsign.square.fill" catalog="system" selectedImage="dollarsign.square.fill" id="Lt8-Ah-Zm8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xZr-1w-TKe">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TWT-6H-GRu" kind="relationship" relationship="rootViewController" id="1cK-64-aWn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hh3-i1-T3f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1491" y="-187"/>
+        </scene>
+        <!--Welcome to the Cashier's Office-->
+        <scene sceneID="1Ps-Ss-u8r">
+            <objects>
+                <viewController id="TWT-6H-GRu" customClass="FinancialAidViewController" customModule="CUNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jGt-4D-hJ9">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bz8-lv-48j">
+                                <rect key="frame" x="16" y="538" width="378" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.041461013259999999" green="0.10892070080000001" blue="0.16863393779999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dollarDesign" translatesAutoresizingMaskIntoConstraints="NO" id="Yar-Py-4TK">
+                                <rect key="frame" x="0.0" y="88" width="256" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.2446473837" blue="0.40416324139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dollarsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JTq-QI-mIq">
+                                <rect key="frame" x="216" y="413.5" width="81" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.53673660759999997" green="0.6524424553" blue="0.83139127489999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dollarsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5ec-73-Ifl">
+                                <rect key="frame" x="167" y="358.5" width="81" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.1160905287" green="0.4040700197" blue="0.58076220749999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dollarsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WXV-Vf-czc">
+                                <rect key="frame" x="167" y="246.5" width="81" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.076102189719676971" green="0.1874738335609436" blue="0.30243909358978271" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dollarsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xbt-u5-xhn">
+                                <rect key="frame" x="216" y="302.5" width="81" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.2446473837" blue="0.40416324139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7af-9o-7Lz">
+                                <rect key="frame" x="287" y="749" width="107" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.018983135000000002" green="0.1204049662" blue="0.19608661529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Directions " image="paperplane" catalog="system">
+                                    <color key="titleColor" red="0.045752286910000002" green="0.1205563918" blue="0.18824267389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="CashierDirections:" destination="TWT-6H-GRu" eventType="touchUpInside" id="Pfn-5h-9vD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABOUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANI-iC-uTK">
+                                <rect key="frame" x="16" y="509" width="58" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="0.018983135000000002" green="0.1204049662" blue="0.19608661529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxQ-iE-voH">
+                                <rect key="frame" x="16" y="538" width="394" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">The University's Cashiers' office allows students to pay for any bills they owe the institution. For example, on-campus housing fee, tuition, parking decal, graduation fee, dorm fine, meal plan, room application, orientation fee, and many more. It is located on the first floor at Tingley Memorial Hall.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.13839846850000001" blue="0.23313367369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jpt-E9-sPr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Welcome to the Cashier's Office" id="efF-Hv-v5Q"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7k2-fn-l9h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1491.5887850467288" y="571.49028077753781"/>
+        </scene>
+        <!--Welcome to Financial Aid-->
+        <scene sceneID="0r9-T5-YGf">
+            <objects>
+                <viewController id="lBo-vX-xLY" customClass="CashierViewController" customModule="CUNavigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lfD-qU-XgA">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4b-50-DRP">
+                                <rect key="frame" x="301" y="741" width="107" height="22"/>
+                                <color key="tintColor" red="0.018983135000000002" green="0.1204049662" blue="0.19608661529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Directions " image="paperplane" catalog="system">
+                                    <color key="titleColor" red="0.045752286910000002" green="0.1205563918" blue="0.18824267389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="BusinessOffDirections:" destination="lBo-vX-xLY" eventType="touchUpInside" id="obd-Ks-MAR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwa-Ot-dVh">
+                                <rect key="frame" x="18" y="134" width="396" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="X0d-IH-o0Q"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">The University's Financial Aid aims to bring awareness to scholarships, grants, loans, and work-study to make Claflin education affordable.</string>
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7M-9z-04b">
+                                <rect key="frame" x="18" y="105" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="0.018983135000000002" green="0.1204049662" blue="0.19608661529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eM2-qJ-lVV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eM2-qJ-lVV" firstAttribute="bottom" secondItem="x4b-50-DRP" secondAttribute="bottom" constant="80" id="4K7-E3-hYE"/>
+                            <constraint firstItem="h7M-9z-04b" firstAttribute="leading" secondItem="lfD-qU-XgA" secondAttribute="leadingMargin" constant="-2" id="4Z9-mP-ZRr"/>
+                            <constraint firstItem="nwa-Ot-dVh" firstAttribute="leading" secondItem="eM2-qJ-lVV" secondAttribute="leading" constant="18" id="BPT-Kd-5AU"/>
+                            <constraint firstItem="x4b-50-DRP" firstAttribute="trailing" secondItem="lfD-qU-XgA" secondAttribute="trailingMargin" id="PUw-mB-ZiK"/>
+                            <constraint firstItem="h7M-9z-04b" firstAttribute="top" secondItem="eM2-qJ-lVV" secondAttribute="top" constant="17" id="qQ3-X7-koG"/>
+                            <constraint firstItem="nwa-Ot-dVh" firstAttribute="top" secondItem="h7M-9z-04b" secondAttribute="bottom" constant="8" id="sVI-Iz-dee"/>
+                            <constraint firstItem="nwa-Ot-dVh" firstAttribute="centerX" secondItem="lfD-qU-XgA" secondAttribute="centerX" constant="2" id="wa3-FE-iRy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Welcome to Financial Aid" id="Ke7-er-zQD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zoP-8j-pD9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807.47663551401865" y="571.49028077753781"/>
+        </scene>
+        <!--Business Office-->
+        <scene sceneID="evy-z6-BlF">
+            <objects>
+                <navigationController id="atQ-YP-an0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Business Office" image="building.2.crop.circle.fill" catalog="system" selectedImage="building.2.crop.circle.fill" id="VWz-Tl-tra"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UWV-qx-U1G">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="J4N-I8-f1W" kind="relationship" relationship="rootViewController" id="Gr6-HW-Exk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oR3-VK-O3z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-384" y="-188"/>
+        </scene>
+        <!--Financial AId-->
+        <scene sceneID="tZo-wc-3if">
+            <objects>
+                <navigationController id="6oo-3H-zxe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Financial AId" image="banknote.fill" catalog="system" id="SHu-vX-CSl">
+                        <imageReference key="selectedImage" image="banknote.fill" catalog="system" renderingMode="template"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BFe-AH-Y5W">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lBo-vX-xLY" kind="relationship" relationship="rootViewController" id="ngL-qV-W4v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w6m-Cc-NUO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="-188"/>
         </scene>
     </scenes>
     <resources>
-        <image name="banknote" catalog="system" width="128" height="78"/>
+        <image name="BusinessTrans" width="425" height="315"/>
+        <image name="banknote.fill" catalog="system" width="128" height="78"/>
         <image name="building.2.crop.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="chevron.backward.circle" catalog="system" width="128" height="121"/>
+        <image name="dollarDesign" width="312" height="337"/>
+        <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
         <image name="dollarsign.square.fill" catalog="system" width="128" height="114"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="paperplane" catalog="system" width="128" height="118"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -10,6 +10,8 @@ import UIKit
 
 class HealthandWellnessViewController: UIViewController {
     
+    @IBOutlet weak var HCenterBtn: UIButton!
+    @IBOutlet weak var JTKGymBtn: UIButton!
     @IBOutlet weak var HWCollectionView: UICollectionView!
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -27,26 +29,14 @@ class HealthandWellnessViewController: UIViewController {
         super.viewDidLoad()
         addBottomBorders()
         
-        HWCollectionView.dataSource = self
-        HWCollectionView.delegate = self
-        HWCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
-    }
-}
-
-extension HealthandWellnessViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return categories.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = HWCollectionView.dequeueReusableCell(withReuseIdentifier: "H_WCollectionViewCell", for: indexPath) as! H_WCollectionViewCell
-        cell.setup(with: categories[indexPath.row])
-        return cell
-    }
-}
-
-extension HealthandWellnessViewController: UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 163, height: 175)
+        HCenterBtn.layer.cornerRadius = 7.0
+        HCenterBtn.layer.borderWidth = 2
+        HCenterBtn.layer.borderColor = UIColor(red:18/255, green:191/255, blue:204/255, alpha: 1).cgColor
+        HCenterBtn.layer.masksToBounds = true
+        
+        JTKGymBtn.layer.cornerRadius = 7.0
+        JTKGymBtn.layer.borderWidth = 2
+        JTKGymBtn.layer.borderColor = UIColor(red:118/255, green:169/255, blue:219/255, alpha: 1).cgColor
+        JTKGymBtn.layer.masksToBounds = true
     }
 }

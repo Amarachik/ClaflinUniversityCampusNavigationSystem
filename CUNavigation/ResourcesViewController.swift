@@ -13,6 +13,8 @@ class ResourcesViewController: UIViewController {
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    @IBOutlet weak var LibraryBtn: UIButton!
+    @IBOutlet weak var bkStoreBtn: UIButton!
     @IBOutlet weak var headerView: UIView!
     func addBottomBorders() {
        let thickness: CGFloat = 3.0
@@ -24,5 +26,15 @@ class ResourcesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addBottomBorders()
+        LibraryBtn.layer.cornerRadius = 7.0
+        LibraryBtn.layer.borderWidth = 2
+        LibraryBtn.layer.borderColor = UIColor(red:0/255, green:52/255, blue:94/255, alpha: 1).cgColor
+        LibraryBtn.layer.masksToBounds = true
+        
+        bkStoreBtn.layer.cornerRadius = 7.0
+        bkStoreBtn.layer.borderWidth = 2
+        bkStoreBtn.layer.borderColor = UIColor(red:8/255, green:98/255, blue:156/255, alpha: 1).cgColor
+        bkStoreBtn.layer.masksToBounds = true
+    
     }
 }
