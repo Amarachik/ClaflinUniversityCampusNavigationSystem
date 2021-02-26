@@ -12,7 +12,6 @@
 		A201EEE425DADC0C001CC537 /* ASCClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201EEE325DADC0C001CC537 /* ASCClass.swift */; };
 		A201EEE725DADC27001CC537 /* ASCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201EEE625DADC27001CC537 /* ASCViewController.swift */; };
 		A201EEEA25DADC3E001CC537 /* ASCCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201EEE925DADC3E001CC537 /* ASCCollectionViewCell.swift */; };
-		A201EEEF25DADE01001CC537 /* SSSClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201EEEE25DADE01001CC537 /* SSSClass.swift */; };
 		A201EEF225DADE15001CC537 /* SSSCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201EEF125DADE15001CC537 /* SSSCollectionViewCell.swift */; };
 		A201EEF525DADE32001CC537 /* SSSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201EEF425DADE32001CC537 /* SSSViewController.swift */; };
 		A21732042533AC4A00B3265F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21732032533AC4A00B3265F /* AppDelegate.swift */; };
@@ -55,6 +54,7 @@
 		A2F9711425C257F700BDF9D9 /* HealthCenterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9711325C257F700BDF9D9 /* HealthCenterClass.swift */; };
 		A2F9711725C2581E00BDF9D9 /* HealthCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9711625C2581E00BDF9D9 /* HealthCenterViewController.swift */; };
 		A2F9711A25C2583C00BDF9D9 /* HealthCenterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9711925C2583C00BDF9D9 /* HealthCenterCollectionViewCell.swift */; };
+		A2FF1C7C25E88045004DB479 /* SSSClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FF1C7B25E88045004DB479 /* SSSClass.swift */; };
 		E83366FD4423066F40F0851F /* Pods_CUNavigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5761993E5A819A1EC08FC41 /* Pods_CUNavigation.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,6 @@
 		A201EEE325DADC0C001CC537 /* ASCClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASCClass.swift; sourceTree = "<group>"; };
 		A201EEE625DADC27001CC537 /* ASCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASCViewController.swift; sourceTree = "<group>"; };
 		A201EEE925DADC3E001CC537 /* ASCCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASCCollectionViewCell.swift; sourceTree = "<group>"; };
-		A201EEEE25DADE01001CC537 /* SSSClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SSSClass.swift; path = ../../../../SSSClass.swift; sourceTree = "<group>"; };
 		A201EEF125DADE15001CC537 /* SSSCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSCollectionViewCell.swift; sourceTree = "<group>"; };
 		A201EEF425DADE32001CC537 /* SSSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSViewController.swift; sourceTree = "<group>"; };
 		A21732002533AC4A00B3265F /* CUNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +109,7 @@
 		A2F9711325C257F700BDF9D9 /* HealthCenterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCenterClass.swift; sourceTree = "<group>"; };
 		A2F9711625C2581E00BDF9D9 /* HealthCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCenterViewController.swift; sourceTree = "<group>"; };
 		A2F9711925C2583C00BDF9D9 /* HealthCenterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCenterCollectionViewCell.swift; sourceTree = "<group>"; };
+		A2FF1C7B25E88045004DB479 /* SSSClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSSClass.swift; sourceTree = "<group>"; };
 		DF9CFDA30595F067FA77FFDA /* Pods-CUNavigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUNavigation.release.xcconfig"; path = "Pods/Target Support Files/Pods-CUNavigation/Pods-CUNavigation.release.xcconfig"; sourceTree = "<group>"; };
 		E5761993E5A819A1EC08FC41 /* Pods_CUNavigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CUNavigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,8 +139,8 @@
 		A201EEED25DADDE3001CC537 /* StudentSupportServices */ = {
 			isa = PBXGroup;
 			children = (
-				A201EEEE25DADE01001CC537 /* SSSClass.swift */,
 				A201EEF125DADE15001CC537 /* SSSCollectionViewCell.swift */,
+				A2FF1C7B25E88045004DB479 /* SSSClass.swift */,
 				A201EEF425DADE32001CC537 /* SSSViewController.swift */,
 			);
 			path = StudentSupportServices;
@@ -454,8 +454,8 @@
 				A2C2EA76253F13EA00F1C925 /* CUNavigationFirstPageViewController.swift in Sources */,
 				A201EEF525DADE32001CC537 /* SSSViewController.swift in Sources */,
 				A2521CE3256B270D00E38BE0 /* WritingCenterViewControllerTest.swift in Sources */,
-				A201EEEF25DADE01001CC537 /* SSSClass.swift in Sources */,
 				A274D9C925C37F930070343D /* FinancialAidViewController.swift in Sources */,
+				A2FF1C7C25E88045004DB479 /* SSSClass.swift in Sources */,
 				A2E61550256B09A6008952F2 /* AcademicDevelopmentCategoryViewController copy.swift in Sources */,
 				A21732062533AC4A00B3265F /* ViewController.swift in Sources */,
 				A2521CE9256B272900E38BE0 /* WritingCenterClass.swift in Sources */,
