@@ -6,6 +6,7 @@
 //  Copyright © 2020 Amarachi Kalu-Onuma. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
 import UIKit
 import GoogleMaps
@@ -35,6 +36,7 @@ class CUNavigationFirstPageViewController: UIViewController, UIPickerViewDelegat
     }
     
     let locationManger = CLLocationManager()
+    
     class buildingPicker {
         let building : String
         let buildingLongitude : Double
@@ -46,45 +48,46 @@ class CUNavigationFirstPageViewController: UIViewController, UIPickerViewDelegat
             self.buildingLatitude = buildingLatitude
         }
     }
+    //contains three properties
     var buildings:[buildingPicker] = [
-        buildingPicker(building: "James S. Thomas Science Center", buildingLongitude: -80.85424, buildingLatitude: 33.49897),
-        buildingPicker(building: "Historical Tingley Memorial Hall", buildingLongitude: -80.85436, buildingLatitude: 33.49844),
-        buildingPicker(building: "Arthur Rose Museum", buildingLongitude: -80.85474, buildingLatitude: 33.49821),
-        buildingPicker(building: "W.V. Middleton Fine Arts Center", buildingLongitude: -80.85476, buildingLatitude: 33.49782),
-        buildingPicker(building: "University Music Center", buildingLongitude: -80.85490, buildingLatitude: 33.49760),
-        buildingPicker(building: "Student Center", buildingLongitude: -80.85515, buildingLatitude: 33.49690),
-        buildingPicker(building: "Kliest Hall (Female Residence)", buildingLongitude: -80.85480, buildingLatitude: 33.49655),
         buildingPicker(building: "Alice Carson Tisdale Honors College", buildingLongitude: 33.49674, buildingLatitude: -80.85434),
-        buildingPicker(building: "Ministers' Hall", buildingLongitude: -80.85426, buildingLatitude: 33.49703),
-        buildingPicker(building: "Fred P. Corson Hall", buildingLongitude: -80.85376, buildingLatitude: 33.49711),
-        buildingPicker(building: "Trustee Hall", buildingLongitude: -80.85453, buildingLatitude: 33.49741),
-        buildingPicker(building: "Grace T. Kennedy Business and Communications", buildingLongitude: -80.85407, buildingLatitude: 33.49761),
-        buildingPicker(building: "Mary E. Dunton Hall", buildingLongitude: -80.853169, buildingLatitude: 33.497524),
-        buildingPicker(building: "James and Dorothy Z. Elmore Chapel", buildingLongitude: -80.85263, buildingLatitude: 33.49791),
-        buildingPicker(building: "Laymen Hall", buildingLongitude: -80.85321, buildingLatitude: 33.49816),
-        buildingPicker(building: "Bowen Hall/ The Freshman College", buildingLongitude: -80.85353, buildingLatitude: 33.49834),
+        buildingPicker(building: "Arthur Rose Museum", buildingLongitude: -80.85474, buildingLatitude: 33.49821),
         buildingPicker(building: "Asbury Residence Hall", buildingLongitude: -80.85309, buildingLatitude: 33.49853),
-        buildingPicker(building: "H V Manning Library", buildingLongitude: -80.85346, buildingLatitude: 33.49907),
-        buildingPicker(building: "SRC South", buildingLongitude: -80.85230, buildingLatitude: 33.49841),
-        buildingPicker(building: "SRC East", buildingLongitude: -80.85196, buildingLatitude: 33.49865),
-        buildingPicker(building: "SRC North", buildingLongitude: -80.85210, buildingLatitude: 33.49918),
-        buildingPicker(building: "SRC West", buildingLongitude: 33.49964, buildingLatitude: -80.85227),
+        buildingPicker(building: "Bowen Hall/ The Freshman College", buildingLongitude: -80.85353, buildingLatitude: 33.49834),
         buildingPicker(building: "Claflin Commons", buildingLongitude: -80.85276, buildingLatitude: 33.49959),
+        buildingPicker(building: "Department of Counseling Center/ ADA", buildingLongitude: -80.85059, buildingLatitude: 33.50182),
+        buildingPicker(building: "Department of History & Sociology", buildingLongitude: -80.85212, buildingLatitude: 33.50066),
+        buildingPicker(building: "Department of Sponsored Programs", buildingLongitude: -80.85103, buildingLatitude: 33.50184),
+        buildingPicker(building: "Department of TRIO/ Upward Bound", buildingLongitude: -80.85071, buildingLatitude: 33.50173),
+        buildingPicker(building: "Fred P. Corson Hall", buildingLongitude: -80.85376, buildingLatitude: 33.49711),
+        buildingPicker(building: "Grace T. Kennedy Business and Communications", buildingLongitude: -80.85407, buildingLatitude: 33.49761),
         buildingPicker(building: "High-Rise Residence Hall", buildingLongitude: -80.85332, buildingLatitude: 33.49985),
-        buildingPicker(building: "University Dining Facility/ Panther Plaza", buildingLongitude: -80.85240, buildingLatitude: 33.49858),
+        buildingPicker(building: "Historical Tingley Memorial Hall", buildingLongitude: -80.85436, buildingLatitude: 33.49844),
+        buildingPicker(building: "H V Manning Library", buildingLongitude: -80.85346, buildingLatitude: 33.49907),
+        buildingPicker(building: "James and Dorothy Z. Elmore Chapel", buildingLongitude: -80.85263, buildingLatitude: 33.49791),
+        buildingPicker(building: "James S. Thomas Science Center", buildingLongitude: -80.85424, buildingLatitude: 33.49897),
         buildingPicker(building: "Jonas T. Kennedy Health and Physical Education", buildingLongitude: -80.85269, buildingLatitude: 33.50147),
         buildingPicker(building: "JST Annex", buildingLongitude: -80.85187, buildingLatitude: 33.50187),
-        buildingPicker(building: "Student Health Center", buildingLongitude: -80.85204, buildingLatitude: 33.50085),
+        buildingPicker(building: "Kliest Hall (Female Residence)", buildingLongitude: -80.85480, buildingLatitude: 33.49655),
+        buildingPicker(building: "Laymen Hall", buildingLongitude: -80.85321, buildingLatitude: 33.49816),
+        buildingPicker(building: "Mary E. Dunton Hall", buildingLongitude: -80.853169, buildingLatitude: 33.497524),
+        buildingPicker(building: "Ministers' Hall", buildingLongitude: -80.85426, buildingLatitude: 33.49703),
         buildingPicker(building: "Molecular Science Research Center", buildingLongitude: -80.85069, buildingLatitude: 33.50150),
-        buildingPicker(building: "Department of History & Sociology", buildingLongitude: -80.85212, buildingLatitude: 33.50066),
-        buildingPicker(building: "Department of TRIO/ Upward Bound", buildingLongitude: -80.85071, buildingLatitude: 33.50173),
-        buildingPicker(building: "Department of Counseling Center/ ADA", buildingLongitude: -80.85059, buildingLatitude: 33.50182),
-        buildingPicker(building: "Department of Sponsored Programs", buildingLongitude: -80.85103, buildingLatitude: 33.50184),
+        buildingPicker(building: "SRC East", buildingLongitude: -80.85196, buildingLatitude: 33.49865),
+        buildingPicker(building: "SRC North", buildingLongitude: -80.85210, buildingLatitude: 33.49918),
+        buildingPicker(building: "SRC South", buildingLongitude: -80.85230, buildingLatitude: 33.49841),
+        buildingPicker(building: "SRC West", buildingLongitude: 33.49964, buildingLatitude: -80.85227),
+        buildingPicker(building: "Student Center", buildingLongitude: -80.85515, buildingLatitude: 33.49690),
+        buildingPicker(building: "Student Health Center", buildingLongitude: -80.85204, buildingLatitude: 33.50085),
+        buildingPicker(building: "Trustee Hall", buildingLongitude: -80.85453, buildingLatitude: 33.49741),
+        buildingPicker(building: "University Dining Facility/ Panther Plaza", buildingLongitude: -80.85240, buildingLatitude: 33.49858),
+        buildingPicker(building: "University Music Center", buildingLongitude: -80.85490, buildingLatitude: 33.49760),
+        buildingPicker(building: "W.V. Middleton Fine Arts Center", buildingLongitude: -80.85476, buildingLatitude: 33.49782),
     ]
+    
 
     var pickerView = UIPickerView()
-   // var filteredData = [String]()
-    
+
     @objc func donePressed(){
         self.view.endEditing(true)
     }
@@ -114,7 +117,6 @@ class CUNavigationFirstPageViewController: UIViewController, UIPickerViewDelegat
         
         pickerView.delegate = self
         pickerView.dataSource = self
-        // BuildingsSearchTextField.delegate = self
         
         //toolbar
         let toolbar = UIToolbar()
@@ -134,14 +136,14 @@ class CUNavigationFirstPageViewController: UIViewController, UIPickerViewDelegat
         BuildingsSearchTextField.leftViewMode = .always
         
         
-        checkLocationServces()
+       
         let camera = GMSCameraPosition.camera(withLatitude: 33.49838, longitude: -80.85353, zoom: 100)
         mapView.camera = camera
         mapView.mapType = .hybrid
         mapView.settings.compassButton = true
         mapView.animate(toZoom: 18)
         
-        let sourceLocation = "\(33.49897), \(-80.85424)"
+  /*      let sourceLocation = "\(33.49897), \(-80.85424)"
         let destinationLocation = "\(33.50147), \(-80.85269)"
         
         let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(sourceLocation)&destination=\(destinationLocation)&mode=walking&key=AIzaSyDbwEVVfZr4w5VhAVl7Bx56O4AbcajVSBY"
@@ -167,7 +169,7 @@ class CUNavigationFirstPageViewController: UIViewController, UIPickerViewDelegat
             catch let error {
                 print(error.localizedDescription)
             }
-        }
+        } */
 
         //Labels all buildings on campus with a marker
         let marker = GMSMarker()
@@ -356,12 +358,14 @@ class CUNavigationFirstPageViewController: UIViewController, UIPickerViewDelegat
         markerJTK.icon = GMSMarker.markerImage(with: .blue)
         markerJTK.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerJTK.map = mapView
+        markerJTK.opacity = 0.0
         
         let markerAnnex = GMSMarker()
         markerAnnex.position = CLLocationCoordinate2D(latitude: 33.50187, longitude: -80.85187)
         markerAnnex.title = "JST Annex"
+        markerAnnex.icon = GMSMarker.markerImage(with: .blue)
+        markerAnnex.setIconSize(scaledToSize: .init(width: 20, height: 30))
         markerAnnex.map = mapView
-        markerAnnex.opacity = 0.0
         
         let markerHealth = GMSMarker()
         markerHealth.position = CLLocationCoordinate2D(latitude: 33.50085, longitude: -80.85204)
@@ -405,52 +409,34 @@ class CUNavigationFirstPageViewController: UIViewController, UIPickerViewDelegat
         markerSponsoredProgram.opacity = 0.0
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        checkLocationServices()
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-       /* if filteredData.isEmpty {
-            return filteredData.count
-        } */
         return buildings.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return buildings[row].building
     }
+    
     //Capture the picker view selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
         let buildingObject = buildings[row]
         BuildingsSearchTextField.text = buildingObject.building
         self.view.endEditing(true)
-        //Save selected row integer in User Defaults
         
+        //Save selected row integer in User Defaults
         UserDefaults.standard.set(row, forKey: "pickerViewRow")
-        //BuildingsSearchTextField.resignFirstResponder()
-        //OPEN THE MAPS FROM HERE WITH THE BUILDING OBJECT'S CORDINATES
+
         buildingObjectHolder = buildingObject
     }
-    
-    /*  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if let text = textField.text {
-            filterText(text+string)
-        }
-        
-        return true
-    }
-    
-     func filterText(_ query: String) {
-        filteredData.removeAll()
-        for string in buildings {
-            if string.building.starts(with: query) {
-                filteredData.append(string.building)
-            }
-        }
-        self.pickerView.reloadAllComponents()
-    } */
     
     func openInMaps(latitutde:CLLocationDegrees, longitude:CLLocationDegrees, name: String){
         let regionDistance:CLLocationDistance = 1000;
@@ -469,12 +455,24 @@ class CUNavigationFirstPageViewController: UIViewController, UIPickerViewDelegat
         locationManger.delegate = self
         locationManger.desiredAccuracy = kCLLocationAccuracyBest
     }
-    func checkLocationServces(){
+    
+
+    func checkLocationServices(){
         if CLLocationManager.locationServicesEnabled(){
             setupLocationManager()
             checkLocationAuthorization()
         } else {
             //Show alert letting the user know they have to turn this on
+            let alertController = UIAlertController(title: NSLocalizedString("Location Services Off", comment: ""), message: NSLocalizedString("Turn on Location Services in Settings > Privacy to Allow CUNavigation to determine your current location", comment: ""), preferredStyle: .alert)
+
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+            let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: ""), style: .default) { (UIAlertAction) in
+                UIApplication.shared.open(NSURL(string: UIApplication.openSettingsURLString)! as URL)
+                        }
+
+            alertController.addAction(cancelAction)
+            alertController.addAction(settingsAction)
+                        self.present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -482,9 +480,11 @@ class CUNavigationFirstPageViewController: UIViewController, UIPickerViewDelegat
         switch CLLocationManager.authorizationStatus(){
         case .authorizedWhenInUse:
             mapView.isMyLocationEnabled = true
+            locationManger.startUpdatingLocation()
             break
         case .denied:
             //Show alert instructing them how to turn on permissions
+
             break
         case .notDetermined:
             locationManger.requestWhenInUseAuthorization()
@@ -503,9 +503,10 @@ extension CUNavigationFirstPageViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus ){
-        
+       checkLocationServices()
     }
 }
+
 extension GMSMarker {
     func setIconSize(scaledToSize newSize: CGSize) {
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
