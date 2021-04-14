@@ -484,7 +484,6 @@ class CUNavigationFirstPageViewController: UIViewController, UIPickerViewDelegat
             break
         case .denied:
             //Show alert instructing them how to turn on permissions
-
             break
         case .notDetermined:
             locationManger.requestWhenInUseAuthorization()
@@ -516,3 +515,31 @@ extension GMSMarker {
         icon = newImage
     }
 }
+
+/*      let sourceLocation = "\(33.49897), \(-80.85424)"
+let destinationLocation = "\(33.50147), \(-80.85269)"
+
+let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(sourceLocation)&destination=\(destinationLocation)&mode=walking&key=AIzaSyDbwEVVfZr4w5VhAVl7Bx56O4AbcajVSBY"
+let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)!
+AF.request(encodedURL).responseJSON { (response) in
+    guard let data = response.data else {
+        return
+    }
+    do {
+        let jsonData = try JSON(data: data)
+        print(jsonData)
+        let routes = jsonData["routes"].arrayValue
+        for route in routes {
+            let overview_polyline = route["overview_polyline"].dictionary
+            let points = overview_polyline?["points"]?.string
+            let path = GMSPath.init(fromEncodedPath: points ?? "")
+            let polyline = GMSPolyline.init(path: path)
+            polyline.strokeColor = .systemGreen
+            polyline.strokeWidth = 5
+            polyline.map = self.mapView
+            }
+        }
+    catch let error {
+        print(error.localizedDescription)
+    }
+} */
